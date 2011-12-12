@@ -1,0 +1,182 @@
+\documentclass[10pt]{article}
+\usepackage{anysize}
+\marginsize{1in}{1in}{.5in}{.5in}
+\pagenumbering{arabic}
+\usepackage{setspace}
+\usepackage[usenames]{color}
+\usepackage[fleqn]{amsmath}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{verbatim}
+\usepackage{indentfirst}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage[table]{xcolor}
+\usepackage{ragged2e}
+\usepackage{parskip}
+\usepackage[normalem]{ulem}
+\usepackage{hyperref}
+\hypersetup{pdfborder={0 0 0}, colorlinks=true, urlcolor=blue}
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\usepackage{ifthen}
+
+\usepackage[round]{natbib}
+\bibliographystyle{evolution}
+
+\pagestyle{fancy}
+\lhead{\ifthenelse{\value{page}=1}{}{\sffamily\footnotesize Jamie Oaks}}
+\chead{\ifthenelse{\value{page}=1}{{\scshape Curriculum Vitae} \\ Jamie Richard Oaks}{\sffamily\footnotesize Curriculum Vitae}}
+\rhead{\ifthenelse{\value{page}=1}{}{\sffamily\footnotesize \today}}
+\cfoot{\sffamily\footnotesize Page \thepage\ of \pageref{LastPage}}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+%\renewcommand{\headheight}{14pt}
+
+\newcommand{\ignore}[1]{}
+\newcommand{\addTail}[1]{\textit{#1}.---}
+\newcommand{\super}[1]{\ensuremath{^{\textrm{#1}}}}
+\newcommand{\sub}[1]{\ensuremath{_{\textrm{#1}}}}
+\newcommand{\dC}{\ensuremath{^\circ{\textrm{C}}}}
+\makeatletter
+  \renewcommand{\section}{\@startsection{section}{1}{0mm}%
+    {-12pt}%
+    {6pt}%
+   {\bfseries\large}}
+\makeatother
+
+\makeatletter
+  \renewcommand{\subsection}{\@startsection{subsection}{1}{0mm}%
+  {-12pt}%
+  {2pt}%
+  {\bfseries\itshape}}
+\makeatother
+
+\makeatletter
+  \renewcommand{\subsubsection}{\@startsection{subsubsection}{1}{0mm}%
+  {-12pt}%
+  {0pt}%
+  {\raggedleft\addTail}}
+\makeatother
+
+\renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}}
+
+\newenvironment{myEnumerate}{
+  \begin{enumerate}
+    \setlength{\itemsep}{1pt}
+    \setlength{\parskip}{0pt}
+    \setlength{\parsep}{0pt}}
+  {\end{enumerate}}
+
+\newenvironment{myItemize}{
+  \begin{itemize}
+    \setlength{\itemsep}{1pt}
+    \setlength{\parskip}{0pt}
+    \setlength{\parsep}{0pt}}
+  {\end{itemize}}
+
+\begin{document}
+\raggedright
+\setlength{\parindent}{0.25in}
+\singlespacing
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{tabular}{ @{} p{3.75in} p{3in} @{}}
+Biodiversity Institute                                               & Phone: 785-864-3439 \\
+Department of Ecology \& Evolutionary Biology  & Fax: 785-864-5335 \\
+University of Kansas                                              & E-mail: \href{joaks1@gmail.com}{\tt joaks1@gmail.com} \\
+1345 Jayhawk Boulevard                                       & \\
+Lawrence, KS 66045                                              & \\
+\end{tabular}
+
+\renewcommand{\refname}{{\bfseries\itshape\normalsize {Publications:}}}
+%\nocite{*}
+%\bibliography{jro}
+\begin{thebibliography}{6}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+
+\bibitem[{Oaks et~al.(Submitted)Oaks, Sukumaran, Esselstyn, Linkem, Siler,
+  Holder, and Brown}]{Oaks2012}
+Oaks, J.~R., J.~Sukumaran, J.~A. Esselstyn, C.~W. Linkem, C.~D. Siler, M.~T.
+  Holder, and R.~M. Brown, Submitted.
+\newblock Evidence for climate-driven diversification? a caution for
+  interpreting {ABC} inferences of simultaneous historical events.
+\newblock Evolution .
+
+\bibitem[{Siler et~al.(In press)Siler, Oaks, Welton, Linkem, Swab, Diesmos, and
+  Brown}]{Siler2012}
+Siler, C.~D., J.~R. Oaks, L.~J. Welton, C.~W. Linkem, J.~Swab, A.~C. Diesmos,
+  and R.~M. Brown, In press.
+\newblock Did geckos ride the {P}alawan raft to the {P}hilippines?
+\newblock Journal of Biogeography .
+
+\bibitem[{Oaks(2011)}]{Oaks2011}
+Oaks, J.~R., 2011.
+\newblock A time-calibrated species tree of {C}rocodylia reveals a recent
+  radiation of the true crocodiles.
+\newblock Evolution 65:3285--3297.
+\newblock
+  \href{http://onlinelibrary.wiley.com/doi/10.1111/j.1558-5646.2011.01373.x/abstract}{link}.
+
+\bibitem[{Siler et~al.(2010)Siler, Oaks, Esselstyn, Diesmos, and
+  Brown}]{Siler2010}
+Siler, C.~D., J.~R. Oaks, J.~A. Esselstyn, A.~C. Diesmos, and R.~M. Brown,
+  2010.
+\newblock Phylogeny and biogeography of {P}hilippine bent-toed geckos
+  ({G}ekkonidae: \emph{{C}yrtodactylus}) contradict a prevailing model of
+  {P}leistocene diversification.
+\newblock Molecular Phylogenetics and Evolution 55:699--710.
+\newblock
+  \href{http://www.sciencedirect.com/science/article/pii/S1055790310000382}{link}.
+
+\bibitem[{Grismer et~al.(2008)Grismer, Neang, Chav, Perry L.~Wood, Oaks,
+  Holden, Grismer, Szutz, and Youmans}]{GrismerL2008}
+Grismer, L.~L., T.~Neang, T.~Chav, J.~Perry L.~Wood, J.~R. Oaks, J.~Holden,
+  J.~L. Grismer, T.~R. Szutz, and T.~M. Youmans, 2008.
+\newblock Additional amphibians and reptiles from the {P}hnom {S}amkos
+  {W}ildlife {S}anctuary in {N}orthwestern {C}ardamom {M}ountains, {C}ambodia,
+  with comments on their taxonomy and the discovery of four new species.
+\newblock Raffles Bulletin of Zoology 56:161--175.
+\newblock
+  \href{http://rmbr.nus.edu.sg/rbz/biblio/56/56rbz161-175.pdf}{link}.
+
+\bibitem[{Oaks et~al.(2008)Oaks, Daul, and Adler}]{Oaks2008}
+Oaks, J.~R., J.~M. Daul, and G.~H. Adler, 2008.
+\newblock Life span of a tropical forest rodent, \emph{{P}roechimys
+  semispinosus}.
+\newblock Journal of Mammalogy 89:904--908.
+\newblock \href{http://dx.doi.org/10.1644/07-MAMM-A-045.1}{link}.
+
+\end{thebibliography}
+
+\newpage
+
+\subsection*{Grants:}
+\noindent \hangindent=0.7cm \textbf{Oaks, J.R.}
+Comparative Phylogeography of a Dynamic Archipelago.
+KU Biodiversity Institute Panorama Grant.
+\$1,000. 05/2011--05/2012. \textbf{Funded}.
+
+\noindent \hangindent=0.7cm \textbf{Oaks, J.R.}
+Comparative Phylogeography of a Dynamic Archipelago.
+KU Office of Graduate Studies Doctoral Student Research Award.
+\$2,000. 07/2011--07/2012. \textbf{Funded}.
+
+\subsection*{Teaching:}
+\noindent \hangindent=0.7cm \textbf{Oaks, J.R.}
+Kenneth B. Armitage Award for Excellence in Teaching. BIOL 350---Introduction to Genetics. 
+\$250. 05/2011.
+
+\subsection*{Service/Outreach:}
+\begin{myItemize}
+\item Provided reviews for \emph{Molecular Ecology} (2) and \emph{Molecular Biology and Evolution} (1)
+\item Graduate student representative on the committee for genomics faculty hire (Fall 2011)
+\item While conducting fieldwork in Malaysia, I helped train undergraduate and graduate students from Universiti Kebangsaan Malaysia, Universiti Sains Malaysia, and La Sierra University in methods of field collection and specimen preparation (Fall 2011)
+\end{myItemize}
+
+\end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
