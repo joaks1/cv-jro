@@ -14,6 +14,8 @@
 \usepackage[table]{xcolor}
 \usepackage{ragged2e}
 \usepackage{parskip}
+\usepackage{tabularx}
+\usepackage{tabulary}
 \usepackage[normalem]{ulem}
 \usepackage{hyperref}
 \hypersetup{pdfborder={0 0 0}, colorlinks=true, urlcolor=blue}
@@ -40,8 +42,8 @@
 \newcommand{\dC}{\ensuremath{^\circ{\textrm{C}}}}
 \makeatletter
   \renewcommand{\section}{\@startsection{section}{1}{0mm}%
-    {-12pt}%
-    {6pt}%
+    {-8pt}%
+    {2pt}%
    {\bfseries\large}}
 \makeatother
 
@@ -61,6 +63,8 @@
 
 \renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}}
 
+\renewcommand{\labelitemi}{$\circ$}
+
 \newenvironment{myEnumerate}{
   \begin{enumerate}
     \setlength{\itemsep}{1pt}
@@ -70,27 +74,40 @@
 
 \newenvironment{myItemize}{
   \begin{itemize}
+    \setlength{\leftskip}{-5mm}
     \setlength{\itemsep}{1pt}
     \setlength{\parskip}{0pt}
     \setlength{\parsep}{0pt}}
   {\end{itemize}}
 
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
 \begin{document}
 \raggedright
-\setlength{\parindent}{0.25in}
+\setlength{\parindent}{0in}
 \singlespacing
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{tabular}{ @{} p{3.75in} p{3in} @{}}
+\noindent\begin{tabular*}{\textwidth}[tb]{ @{}l @{\extracolsep{\fill}} l@{}}
+%\noindent\begin{tabular}{ @{}p{4.25in} @{}p{2.75in}@{}}
 Biodiversity Institute                                               & Phone: 785-864-3439 \\
-Department of Ecology \& Evolutionary Biology  & Fax: 785-864-5335 \\
+Department of Ecology \& Evolutionary Biology     & Fax: 785-864-5335 \\
 University of Kansas                                              & E-mail: \href{joaks1@gmail.com}{\tt joaks1@gmail.com} \\
 1345 Jayhawk Boulevard                                       & \\
 Lawrence, KS 66045                                              & \\
-\end{tabular}
+\end{tabular*}
 
-\renewcommand{\refname}{{\bfseries\itshape\normalsize {Publications:}}}
+\section*{Education}
+%%%%%%%%%%%
+%\noindent\begin{tabularx}{\textwidth}{ l Y }
+\noindent\begin{tabulary}{\textwidth}{ @{} l L @{} }
+%\noindent\begin{tabular}{ @{}p{1in}  >{\begin{minipage}[t]{5in}\raggedright\arraybackslash}l<{\end{minipage}\arraybackslash} }
+2007--present	& Ph.D. in Ecology \& Evolutionary Biology, University of Kansas (anticipated May 2013) \\			& \addtolength{\leftskip}{5mm}Advisors:  Rafe Brown \& Mark Holder \\2004--2007	& M.S. in Biological Sciences, Louisiana State University \\%			& \addtolength{\leftskip}{5mm}Thesis: Phylogenetic Systematics, Biogeography, and Evolutionary Ecology of the True Crocodiles (Eusuchia:  Crocodylidae:  \emph{Crocodylus}) \\%			& Advisor:  Christopher Austin \\1999--2004	& B.S. in Biology, University of Wisconsin Oshkosh (\emph{Summa Cum Laude}) \\%			& \addtolength{\leftskip}{5mm}Emphasis:  Ecology and Organismal Biology \\%			& \addtolength{\leftskip}{5mm}Minor:  Microbiology \\%			& \addtolength{\leftskip}{5mm}Advisor:  Gregory Adler \\%			& \addtolength{\leftskip}{5mm}Honors:  Summa Cum Laude \\
+\end{tabulary}
+
+\renewcommand{\refname}{{\bfseries\large {Peer-reviewed Publications}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\nocite{*}
 %\bibliography{jro}
 \begin{thebibliography}{6}
@@ -101,81 +118,431 @@ Lawrence, KS 66045                                              & \\
 \bibitem[{Oaks et~al.(Submitted)Oaks, Sukumaran, Esselstyn, Linkem, Siler,
   Holder, and Brown}]{Oaks2012}
 Oaks, J.~R., J.~Sukumaran, J.~A. Esselstyn, C.~W. Linkem, C.~D. Siler, M.~T.
-  Holder, and R.~M. Brown, Submitted.
+  Holder, and R.~M. Brown. Submitted to \emph{Evolution}.
 \newblock Evidence for climate-driven diversification? a caution for
   interpreting {ABC} inferences of simultaneous historical events.
-\newblock Evolution .
 
 \bibitem[{Siler et~al.(In press)Siler, Oaks, Welton, Linkem, Swab, Diesmos, and
   Brown}]{Siler2012}
 Siler, C.~D., J.~R. Oaks, L.~J. Welton, C.~W. Linkem, J.~Swab, A.~C. Diesmos,
-  and R.~M. Brown, In press.
+  and R.~M. Brown. In press.
 \newblock Did geckos ride the {P}alawan raft to the {P}hilippines?
-\newblock Journal of Biogeography .
+\newblock \emph{Journal of Biogeography}.
 
 \bibitem[{Oaks(2011)}]{Oaks2011}
-Oaks, J.~R., 2011.
+Oaks, J.~R. 2011.
 \newblock A time-calibrated species tree of {C}rocodylia reveals a recent
   radiation of the true crocodiles.
-\newblock Evolution 65:3285--3297.
+\newblock \emph{Evolution} 65:3285--3297.
 \newblock
   \href{http://onlinelibrary.wiley.com/doi/10.1111/j.1558-5646.2011.01373.x/abstract}{link}.
 
 \bibitem[{Siler et~al.(2010)Siler, Oaks, Esselstyn, Diesmos, and
   Brown}]{Siler2010}
-Siler, C.~D., J.~R. Oaks, J.~A. Esselstyn, A.~C. Diesmos, and R.~M. Brown,
+Siler, C.~D., J.~R. Oaks, J.~A. Esselstyn, A.~C. Diesmos, and R.~M. Brown.
   2010.
 \newblock Phylogeny and biogeography of {P}hilippine bent-toed geckos
   ({G}ekkonidae: \emph{{C}yrtodactylus}) contradict a prevailing model of
   {P}leistocene diversification.
-\newblock Molecular Phylogenetics and Evolution 55:699--710.
+\newblock \emph{Molecular Phylogenetics and Evolution} 55:699--710.
 \newblock
   \href{http://www.sciencedirect.com/science/article/pii/S1055790310000382}{link}.
 
 \bibitem[{Grismer et~al.(2008)Grismer, Neang, Chav, Perry L.~Wood, Oaks,
   Holden, Grismer, Szutz, and Youmans}]{GrismerL2008}
 Grismer, L.~L., T.~Neang, T.~Chav, J.~Perry L.~Wood, J.~R. Oaks, J.~Holden,
-  J.~L. Grismer, T.~R. Szutz, and T.~M. Youmans, 2008.
+  J.~L. Grismer, T.~R. Szutz, and T.~M. Youmans. 2008.
 \newblock Additional amphibians and reptiles from the {P}hnom {S}amkos
   {W}ildlife {S}anctuary in {N}orthwestern {C}ardamom {M}ountains, {C}ambodia,
   with comments on their taxonomy and the discovery of four new species.
-\newblock Raffles Bulletin of Zoology 56:161--175.
+\newblock \emph{Raffles Bulletin of Zoology} 56:161--175.
 \newblock
   \href{http://rmbr.nus.edu.sg/rbz/biblio/56/56rbz161-175.pdf}{link}.
 
 \bibitem[{Oaks et~al.(2008)Oaks, Daul, and Adler}]{Oaks2008}
-Oaks, J.~R., J.~M. Daul, and G.~H. Adler, 2008.
+Oaks, J.~R., J.~M. Daul, and G.~H. Adler. 2008.
 \newblock Life span of a tropical forest rodent, \emph{{P}roechimys
   semispinosus}.
-\newblock Journal of Mammalogy 89:904--908.
+\newblock \emph{Journal of Mammalogy} 89:904--908.
 \newblock \href{http://dx.doi.org/10.1644/07-MAMM-A-045.1}{link}.
 
 \end{thebibliography}
 
-\newpage
+\section*{Presentations}
+%%%%%%%%%%%%%
+\hangindent=5mm
+Oaks, J.R., J. Sukumaran, J.A. Esselstyn, C.W. Linkem, C.D. Siler, R.M. Brown.
+Comparative phylogeography of terrestrial vertebrates across Philippine Pleistocene aggregate island complexes.
+Evolution 2010, Portland, Oregon, June 2010.
+Oral contribution.\hangindent=5mm
+*Lusher, E. and J.R. Oaks.
+Phylogeography of Ringneck Snakes across Kansas.
+University of Kansas Undergraduate Research Symposium, Lawrence, Kansas, April 2010.
+Poster.
+*Mentored undergraduate.
 
-\subsection*{Grants:}
-\noindent \hangindent=0.7cm \textbf{Oaks, J.R.}
+\hangindent=5mm
+Oaks, J.R.
+Objective partition choice and the phylogenetic systematics and biogeography of the true crocodiles (\emph{Crocodylus}).
+KU Department of Ecology and Evolutionary Biology Seminar Series, Lawrence, Kansas, February 2010.
+Invited oral contribution.
+
+\hangindent=5mm
+Oaks, J.R.
+Objective partition choice and the phylogenetic systematics and biogeography of the true crocodiles.
+Joint Meeting of Ichthyologists and Herpetologists, Portland, Oregon, July 2009.
+Oral contribution (Awarded best student paper in Systematics/Evolution).
+
+\hangindent=5mm
+Oaks, J.R. and C.W. Linkem.
+Accommodating Among-Site Rate Variation in Phylogenetic Inference: Data Partitioning as a Random Variable and the Objective Choice of Partition Strategy.
+Evolution 2009, Ernst Mayr Competition, University of Idaho, Moscow, Idaho, June 2009.
+Oral contribution.
+
+\hangindent=5mm
+Linkem, C.W. and J.R. Oaks.
+Examination and Utility of the Dirichlet Process Prior in Bayesian Phylogenetics: A Test with Scincid and Anolis Lizards.
+Evolution 2009, Ernst Mayr Competition, University of Idaho, Moscow, Idaho, June 2009.
+Oral contribution.
+
+\hangindent=5mm
+Oaks, J.R.
+Approximate Bayesian Computation in the Chiricahua Mountains.
+KU Natural History Museum Seminar Series, University of Kansas, Lawrence, Kansas, May 2009.
+Oral contribution.
+
+\hangindent=5mm
+Oaks, J.R.
+Objective Partitioning in Phylogenetic Inference.
+Sigma Xi Research Paper Competition, University of Kansas, Lawrence, Kansas, April 2009.
+Oral contribution
+
+\hangindent=5mm
+Oaks, J.R.
+Accommodating Among-Site Rate Variation in Phylogenetic Inference: Data Partitioning as a Random Variable and the Objective Choice of Partition Strategy.
+KU Natural History Museum Graduate Student Organization Retreat, University of Kansas, Lawrence, Kansas, December 2008.
+Oral contribution.
+
+\hangindent=5mm
+Oaks, J.R.
+Evolution of the True Crocodiles (\emph{Crocodylus}).
+Sigma Xi Research Paper Competition, University of Kansas, Lawrence, Kansas, April 2008.
+Oral contribution (Awarded 2nd place).
+
+\hangindent=5mm
+Oaks, J.R.
+Phylogenetic Systematics and Biogeograhy of the True Crocodiles (\emph{Crocodylus}).
+KU Natural History Museum Seminar Series, University of Kansas, Lawrence, Kansas, November 2007.
+Oral contribution.
+
+\hangindent=5mm
+Carling, M., Z. Cheviron, J. Grismer, A. Jennings, and J.R. Oaks.
+Fieldwork at the LSU Museum of Natural Science: Where in the World are the Museum Students?
+Louisiana State University Museum of Natural Science Seminar Series, Baton Rouge, Louisiana, April 2007.
+Oral contribution.
+
+\section*{Grants}
+%%%%%%%%%
+\hangindent=5mm
+Oaks, J.R. (Co-PI), R. Brown (PI), and M. Holder (Co-PI).
+Dissertation Research: Comparative Phylogeography of a Dynamic Archipelago.
+NSF 1011423.
+\$14,886.
+08/01/2010--08/01/2012.
+Funded.
+
+\hangindent=5mm
+Oaks, J.R.
 Comparative Phylogeography of a Dynamic Archipelago.
 KU Biodiversity Institute Panorama Grant.
-\$1,000. 05/2011--05/2012. \textbf{Funded}.
+\$1000.
+01/05/2011--01/05/2012.
+Funded.
 
-\noindent \hangindent=0.7cm \textbf{Oaks, J.R.}
+\hangindent=5mm
+Oaks, J.R.
 Comparative Phylogeography of a Dynamic Archipelago.
 KU Office of Graduate Studies Doctoral Student Research Award.
-\$2,000. 07/2011--07/2012. \textbf{Funded}.
+\$2000.
+01/07/2011--01/07/2012.
+Funded.
 
-\subsection*{Teaching:}
-\noindent \hangindent=0.7cm \textbf{Oaks, J.R.}
-Kenneth B. Armitage Award for Excellence in Teaching. BIOL 350---Introduction to Genetics. 
-\$250. 05/2011.
+\ignore{
+\hangindent=5mm
+Oaks, J.R.
+Comparative Phylogeography of a Dynamic Archipelago.
+The Society for the Study of Evolution Rosemary Grant Graduate Research Award.
+\$2,085.
+01/07/2010--01/07/2011.
+Not funded.
+}
+\hangindent=5mm
+Oaks, J.R.
+NSF stipend to attend a five-day short course, ``Comparative Methods and Macroevolution In R.''
+Stipend covered travel and lodging; approximately \$1,000.
+17--21/06/2010.
+Funded.
 
-\subsection*{Service/Outreach:}
+\ignore{
+\hangindent=5mm
+Oaks, J.R.
+Comparative Phylogeography of a Dynamic Archipelago.
+KU Graduate Studies Summer Research Fellowship.
+\$4,000.
+05/2010--08/2010.
+Not funded.
+}
+\hangindent=5mm
+Oaks, J.R.
+Comparative Phylogeography of a Dynamic Archipelago.
+KU Department of Ecology and Evolutionary Biology Summer Fellowship.
+\$4,000.
+05/2010--08/2010.
+Funded.
+
+\hangindent=5mm
+Oaks, J.R.
+KU Department of Ecology and Evolutionary Biology Travel Grant.
+\$300.
+06/2010.
+Funded.
+
+\hangindent=5mm
+Oaks, J.R.
+KU Biodiversity Institute Travel Grant.
+\$300.
+06/2010.
+Funded.
+
+\hangindent=5mm
+Oaks, J.R.
+Comparative Phylogeography of Southern Indochina.
+Society of Systematic Biologists Graduate Student Award.
+\$1650.
+06/09--06/10.
+Funded.
+
+\hangindent=5mm
+Oaks, J.R.
+Comparative Phylogeography of Southern Indochina.
+Sigma Xi.
+\$1000.
+06/09--06/10.
+Funded.
+
+\ignore{
+\hangindent=5mm
+Oaks, J.R.
+Comparative Phylogeography of Southern Indochina.
+The Society for the Study of Amphibians and Reptiles Dean E. Metter Award.
+\$800.
+06/09--06/10.
+Not funded.
+}
+\hangindent=5mm
+Oaks, J.R.
+KU Department of Ecology and Evolutionary Biology Travel Grant.
+\$300.
+05/2010.
+Funded.
+
+\hangindent=5mm
+Oaks, J.R.
+Estimating Species Trees Workshop Travel Grant.
+University of Michigan Museum of Zoology.
+\$500.
+10--11/01/09.
+Funded.
+
+\hangindent=5mm
+Oaks, J.R.
+A Six-day Course in Statistical Phylogeography.
+KU Biodiversity Institute Panorama Grant.
+\$900.
+6 days. 05/04/09--10/04/09.
+Funded.
+
+\hangindent=5mm
+Oaks, J.R.
+A Herpetofaunal Survey and Biogeographic Study of the Cardamom Mountains in Southeast Asia.
+Louisiana State University BioGrads Grant.
+\$300.
+05/07--07/07.
+Funded.
+
+\hangindent=5mm
+Oaks, J.R.
+A Herpetofaunal Survey of Phnom Samkos, Cambodia.
+Louisiana State University Museum of Natural Science Graduate Student Research Grant.
+\$600.
+05/07--07/07.
+Funded.
+
+\hangindent=5mm
+Oaks, J.R.
+The Biogeography of the Herpetofauna of the Cardamom Mountains.
+Louisiana State University BioGrads Grant.
+\$300.
+05/06--07/06.
+Funded.
+
+\hangindent=5mm
+Oaks, J.R.
+A Herpetofaunal Survey of the Cardamom Mountains, Cambodia.
+Louisiana State University Museum of Natural Science Graduate Student Research Grant.
+\$300.
+05/06--07/06.
+Funded.
+
+\hangindent=5mm
+Oaks, J.R.
+Herpetology Fieldwork in the Cardamom Mountains of Southeast Asia.
+Louisiana State University BioGrads Grant.
+\$300.
+05/06--07/06.
+Funded.
+
+\hangindent=5mm
+Oaks, J.R.
+Geographic Variation of Multiple Paternity in the American alligator (\emph{Alligator mississippiensis}): Does Selection Rescue Genetic Diversity?
+Sigma Xi.
+\$1000.
+01/05--12/05.
+Funded.
+
+\hangindent=5mm
+Oaks, J.R.
+Coevolution Among Turtles and Parasites: A Test of the Tenant.
+University of Wisconsin Oshkosh Undergraduate Research Grant.
+\$2500.
+6/2001--6/2002.
+Funded.
+
+\section*{Awards \& Honors}
+%%%%%%%%%%%%%%%
+\hangindent=5mm
+Oaks, J.R.
+Kenneth B. Armitage Award for Excellence in Teaching.
+BIOL 350---Introduction to Genetics.
+\$250.
+05/2011.
+
+\hangindent=5mm
+Oaks, J.R.
+Henri Seibert award for best paper in Systematics/Evolution.
+\$300.
+Joint Meeting of Ichthyologists and Herpetologists, Portland, Oregon, 07/09.
+
+\hangindent=5mm
+Oaks, J.R.
+Graduate Student Enhancement.
+\$15,000.
+Louisiana State University Department of Biological Sciences.
+2004--2007.
+
+\hangindent=5mm
+Oaks, J.R.
+Outstanding Biology Major Award.
+\$500.
+University of Wisconsin Oshkosh.
+2004.
+
+\hangindent=5mm
+Oaks, J.R.
+Leslie-Allen Fellowship in Ecology and Field Biology.
+\$500.
+University of Wisconsin Oshkosh.
+2003.
+
+\hangindent=5mm
+Oaks, J.R.
+Leslie-Allen Fellowship in Ecology and Field Biology.
+\$500.
+University of Wisconsin Oshkosh.
+2002.
+
+\section*{Professional Affiliations}
+%%%%%%%%%%%%%%%%%
 \begin{myItemize}
-\item Provided reviews for \emph{Molecular Ecology} (2) and \emph{Molecular Biology and Evolution} (1)
-\item Graduate student representative on the committee for genomics faculty hire (Fall 2011)
-\item While conducting fieldwork in Malaysia, I helped train undergraduate and graduate students from Universiti Kebangsaan Malaysia, Universiti Sains Malaysia, and La Sierra University in methods of field collection and specimen preparation (Fall 2011)
+\item Society for the Study of Evolution
+\item Society of Systematic Biologists
+\item Society for the Study of Amphibians and Reptiles
+\item American Society of Ichthyologists and Herpetologists
 \end{myItemize}
+
+\section*{Workshops}
+%%%%%%%%%%%
+\hangindent=5mm
+Comparative Methods and Macroevolution in R (five-day course).
+National Center for Ecological Analysis Synthesis, Santa Barbara, California.
+17--21 June 2010.
+
+\hangindent=5mm
+Statistical Phylogeography Course.
+American Museum of Natural History Southwestern Research Station, Arizona.
+5--10 April 2009.
+
+\hangindent=5mm
+Estimating Species Trees: A Phylogenetic Paradigm for the 21st Century (Workshop).
+Unveristy of Michigan, Ann Arbor, Michigan.
+10--11 January 2009.
+
+\hangindent=5mm
+HerpNET Georeferencing Workshop.
+University of Kansas, Lawrence, Kansas.
+16--18 December 2004.
+
+\section*{Teaching Appointments}
+%%%%%%%%%%%%%%%%%%
+\noindent\begin{tabulary}{\textwidth}{ @{} l L @{} }
+2010		& Teaching Assistant, Introduction to Genetics (BIOL 350), University of Kansas (two semesters). \\
+		& \addtolength{\leftskip}{4mm} $\circ$ Led weekly discussion sections (lectures and problem solving). \\
+		& \addtolength{\leftskip}{4mm} $\circ$ Led exam review sessions. \\
+		& \addtolength{\leftskip}{4mm} $\circ$ Received Award for Excellence in Teaching. \\
+2010		& Teaching Assistant, Introduction to Biostatistics (BIOL 570), University of Kansas. \\
+		& \addtolength{\leftskip}{4mm} $\circ$ Led weekly computer lab sections. \\
+2010		& Guest Lecturer, Graduate-level Evolutionary Biology (BIOL 712), University of Kansas. \\
+		& \addtolength{\leftskip}{4mm} $\circ$ Presented lecture on Statistical Phylogeography. \\
+2006		& Teaching Assistant, Herpetology (BIOL 4146), Louisiana State University. \\
+		& \addtolength{\leftskip}{4mm} $\circ$ Developed, organized, and presented weekly labs. \\
+2003--2004	& Tutor for the University of Wisconsin Oshkosh Student Support Services \\
+\end{tabulary}
+
+\section*{Research/Curatorial Appointments}
+%%%%%%%%%%%%%%%%%%%%%%%%
+\noindent\begin{tabulary}{\textwidth}{ @{} l L @{} }
+2010--2011	& Research Assistant, University of Kansas. \\
+			& \addtolength{\leftskip}{4mm} $\circ$ Developed phylogenetic software with Dr. Mark Holder. \\
+2007--2009	& Curatorial Assistant, University of Kansas Biodiversity Institute, Herpetology Collection. \\
+			& \addtolength{\leftskip}{4mm} $\circ$ Performed full duties of Herpetology Collections Manager. \\
+2008--2009	& Research Assistant, University of Kansas, NSF EPSCoR (EPS-0553722). \\
+			& \addtolength{\leftskip}{4mm} $\circ$ Collected herpetological specimens, ecological data, and genetic samples across the Great Plains. \\
+2006--2007	& Curatorial Assistant, Louisiana State University Museum of Natural Science, Herpetology Collection. \\
+			& \addtolength{\leftskip}{4mm} $\circ$ Performed full duties of Herpetology Collections Manager. \\
+2004--2006	& Research Assistant, Louisiana State University Museum of Natural Science. \\
+			& \addtolength{\leftskip}{4mm} $\circ$ Geo-referenced specimen localities for NSF-funded HerpNET project. \\
+2002--2004	& Undergraduate Research Assistant, University of Wisconsin Oshkosh. \\
+			& \addtolength{\leftskip}{4mm} $\circ$ Analyzed long-term ecological data collected by Dr. Gregory Adler. \\
+2002			& Undergraduate Research Assistant, University of Wisconsin Oshkosh. \\
+			& \addtolength{\leftskip}{4mm} $\circ$ Conducted immunological study on alligators with Dr. Colleen McDermott. \\
+2001			& Undergraduate Researcher, University of Wisconsin Oshkosh. \\
+			& \addtolength{\leftskip}{4mm} $\circ$ Conducted population study of turtles and their parasites in Wisconsin. \\
+\end{tabulary}
+
+\section*{Service}
+%%%%%%%%%
+\begin{myItemize}
+\item Ad hoc reviewer for \emph{Molecular Ecology} (2) and \emph{Molecular Biology and Evolution} (1)
+\item Graduate student representative on the departmental committee for genomics faculty hire, University of Kansas Department of Ecology and Evolutionary Biology (Fall 2011)
+\item Seminar Coordinator, Louisiana State University Museum of Natural Science Seminar Series (2006--2007)
+\end{myItemize}
+
+\section*{Outreach}
+%%%%%%%%%%
+\begin{myItemize}
+\item While conducting fieldwork in Malaysia, I helped train undergraduate and graduate students from Universiti Kebangsaan Malaysia, Universiti Sains Malaysia, and La Sierra University in methods of field collection and specimen preparation (Fall 2011)
+\item Trained two local high school student volunteers as fieldwork and curatorial assistants during Spring and Summer of 2008.\item Louisiana State University Museum of Natural Science Children’s Special Saturday (2006)
+	\begin{myItemize}	\item Gave a presentation to children, ages 5--10, about the basic biology and diversity of frogs	\end{myItemize}\item Louisiana State University Museum of Natural Science Children’s Special Saturday (2005)	\begin{myItemize}	\item Introduced high school students to the imperative role of scientific research collections and curatorial methods.	\end{myItemize}\end{myItemize}
 
 \end{document}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
