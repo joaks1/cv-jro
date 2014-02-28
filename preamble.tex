@@ -36,10 +36,9 @@
 
 %% Bibliography Formating %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % \usepackage[round]{natbib}
-% \bibliographystyle{sysbio}
+% \bibliographystyle{jro}
 \usepackage[sorting=ydnt,bibstyle=authoryear-comp,defernumbers=true,maxnames=20,firstinits=true, uniquename=init,dashed=false,doi=true,isbn=false,backend=biber]{biblatex}
 
-\DeclareFieldFormat{url}{\url{#1}}
 \DeclareFieldFormat[article]{pages}{#1}
 \DeclareFieldFormat[inproceedings]{pages}{\lowercase{pp.}#1}
 \DeclareFieldFormat[incollection]{pages}{\lowercase{pp.}#1}
@@ -47,11 +46,25 @@
 \DeclareFieldFormat[article]{volume}{#1:}
 \DeclareFieldFormat[article]{number}{}
 \DeclareFieldFormat[article]{title}{\MakeCapital{#1}}
-\DeclareFieldFormat[article]{url}{}
-\DeclareFieldFormat[article]{doi}{\href{http://dx.doi.org/#1}{link.}}
 \DeclareFieldFormat[inproceedings]{title}{#1}
 \DeclareFieldFormat{shorthandwidth}{#1}
 \DeclareFieldFormat{extrayear}{}
+%% create link using doi or url
+\DeclareFieldFormat{doi}{%
+    \ifboolexpr{
+        not test {\iffieldundef{doi}}
+    }%
+    {\href{http://dx.doi.org/#1}{link.}}%
+    {}%
+}
+\DeclareFieldFormat{url}{%
+    \ifboolexpr{
+        test {\iffieldundef{doi}}
+        and
+        not test {\iffieldundef{url}}
+    }{\href{#1}{link.}}%
+    {}%
+}
 
 % No dot before number of articles
 \usepackage{xpatch}
