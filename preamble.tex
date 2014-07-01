@@ -37,48 +37,16 @@
 %% Bibliography Formating %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % \usepackage[round]{natbib}
 % \bibliographystyle{jro}
-\usepackage[sorting=ydnt,bibstyle=authoryear-comp,defernumbers=true,maxnames=20,firstinits=true, uniquename=init,dashed=false,doi=true,isbn=false,backend=biber]{biblatex}
-
-\DeclareFieldFormat[article]{pages}{#1}
-\DeclareFieldFormat[inproceedings]{pages}{\lowercase{pp.}#1}
-\DeclareFieldFormat[incollection]{pages}{\lowercase{pp.}#1}
-% \DeclareFieldFormat[article]{volume}{\mkbibbold{#1}:}
-\DeclareFieldFormat[article]{volume}{#1:}
-\DeclareFieldFormat[article]{number}{}
-\DeclareFieldFormat[article]{title}{\MakeCapital{#1}}
-\DeclareFieldFormat[inproceedings]{title}{#1}
-\DeclareFieldFormat{shorthandwidth}{#1}
-\DeclareFieldFormat{extrayear}{}
-%% create link using doi or url
-\DeclareFieldFormat{doi}{%
-    \ifboolexpr{
-        not test {\iffieldundef{doi}}
-    }%
-    {\href{http://dx.doi.org/#1}{link.}}%
-    {}%
-}
-\DeclareFieldFormat{url}{%
-    \ifboolexpr{
-        test {\iffieldundef{doi}}
-        and
-        not test {\iffieldundef{url}}
-    }{\href{#1}{link.}}%
-    {}%
-}
+\usepackage[bibstyle=joaks-cv,backend=biber]{biblatex}
 
 % No dot before number of articles
-\usepackage{xpatch}
-\xpatchbibmacro{volume+number+eid}{\setunit*{\adddot}}{}{}{}
+% \usepackage{xpatch}
+% \xpatchbibmacro{volume+number+eid}{\setunit*{\adddot}}{}{}{}
 
-% Remove In: for an article.
-\renewbibmacro{in:}{%
-  \ifentrytype{article}{}{%
-  \printtext{\bibstring{in}\intitlepunct}}}
-
-% Change bibliography section title
-\DefineBibliographyStrings{english}{%
-  references = {Peer-reviewed Publications},%
-}
+% % Change bibliography section title
+% \DefineBibliographyStrings{english}{%
+%   references = {Peer-reviewed Publications},%
+% }
 
 \setlength{\bibitemsep}{0.5em}
 \setlength{\bibhang}{5mm}
@@ -97,8 +65,6 @@
 \renewcommand{\footrulewidth}{0pt}
 
 %% Format section titles %%%%%%%%%%%%%%%%%%%%%%%%%
-\renewcommand\refname{Peer-reviewed Publications}
-
 \titleformat{\section}[hang]
     {\large\sffamily\bfseries}
     {\S\ \thesection.}{.5em}{}[]
