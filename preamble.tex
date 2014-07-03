@@ -26,7 +26,6 @@
 \usepackage{xspace}
 \usepackage{parskip}
 \usepackage{tabulary}
-\usepackage{longtable}
 \usepackage[normalem]{ulem}
 \usepackage{hyperref}
 \hypersetup{pdfborder={0 0 0}, colorlinks=true, urlcolor=blue, linkcolor=black}
@@ -117,27 +116,15 @@
 \newcommand{\myHangIndent}{\hangindent=5mm}
 \newcommand{\myIndent}{\hspace{5mm}}
 
-%% Define tabulary-like environment that spans pages %%%%%%%%%%%%%%%%
-\makeatletter
-\def\longtabulary{%
-\def\endfirsthead{\\}%
-\def\endhead{\\}%
-\def\endfoot{\\}%
-\def\endlastfoot{\\}%
-\def\tabulary{%
-  \def\TY@final{%
-\def\endfirsthead{\LT@end@hd@ft\LT@firsthead}%
-\def\endhead{\LT@end@hd@ft\LT@head}%
-\def\endfoot{\LT@end@hd@ft\LT@foot}%
-\def\endlastfoot{\LT@end@hd@ft\LT@lastfoot}%
-\longtable}%
-  \let\endTY@final\endlongtable
-  \TY@tabular}%
-\dimen@\columnwidth
-\advance\dimen@-\LTleft
-\advance\dimen@-\LTright
-\tabulary\dimen@}
-
-\def\endlongtabulary{\endtabulary}
-\makeatother
+%% Create flexible CV item environment
+\newlength{\myCVFirstCol}
+\newlength{\myCVSecondCol}
+\newcommand{\cvitem}[3]{
+    \setlength\myCVFirstCol{#1}
+    \setlength\myCVSecondCol{\textwidth}
+    \addtolength{\myCVSecondCol}{-\myCVFirstCol}
+    \addtolength{\myCVSecondCol}{-\tabcolsep}
+    \begin{tabular}{ @{}p{\myCVFirstCol} >{\begin{minipage}[t]{\myCVSecondCol}\raggedright}l<{\end{minipage}}}
+         #2 & #3
+    \end{tabular}}
 
