@@ -32,6 +32,7 @@
 \usepackage{titlesec}
 \usepackage{lastpage}
 \usepackage{fancyhdr}
+\usepackage{enumitem}
 \usepackage{ifthen}
 
 %% Bibliography Formating %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -48,10 +49,10 @@
 %   references = {Peer-reviewed Publications},%
 % }
 
+\bibliography{bib/jro}
+
 \setlength{\bibitemsep}{0.5em}
 \setlength{\bibhang}{5mm}
-
-\bibliography{bib/jro}
 
 %% Format headers and footers %%%%%%%%%%%%%%%%%%%%
 \pagestyle{fancy}
@@ -115,16 +116,22 @@
 \newcommand{\tableSubItem}{\addtolength{\leftskip}{1em} \labelitemi \xspace}
 \newcommand{\myHangIndent}{\hangindent=5mm}
 \newcommand{\myIndent}{\hspace{5mm}}
+\newcommand{\ifArg}[2]{\ifthenelse{\equal{#1}{}}{}{#2}\xspace}
 
 %% Create flexible CV item environment
-\newlength{\myCVFirstCol}
-\newlength{\myCVSecondCol}
+\newlength{\CVItemFirstCol}
+\newlength{\CVItemFirstColDefault}
+\setlength\CVItemFirstColDefault{2cm}
+\newlength{\CVItemSecondCol}
 \newcommand{\cvitem}[3]{
-    \setlength\myCVFirstCol{#1}
-    \setlength\myCVSecondCol{\textwidth}
-    \addtolength{\myCVSecondCol}{-\myCVFirstCol}
-    \addtolength{\myCVSecondCol}{-\tabcolsep}
-    \begin{tabular}{ @{}p{\myCVFirstCol} >{\begin{minipage}[t]{\myCVSecondCol}\raggedright}l<{\end{minipage}}}
+    \ifthenelse{\equal{#1}{}}{
+        \setlength\CVItemFirstCol{\CVItemFirstColDefault}}{
+        \setlength\CVItemFirstCol{#1}}
+    \setlength\CVItemSecondCol{\textwidth}
+    \addtolength{\CVItemSecondCol}{-\CVItemFirstCol}
+    \addtolength{\CVItemSecondCol}{-2\tabcolsep}
+    % \begin{tabular}{ @{}p{\CVItemFirstCol} >{\begin{minipage}[t]{\CVItemSecondCol}\raggedright}l<{\end{minipage}}}
+    \begin{tabular}{ @{}p{\CVItemFirstCol} >{\begin{minipage}[t]{\CVItemSecondCol}}l<{\end{minipage}}}
          #2 & #3
     \end{tabular}}
 
