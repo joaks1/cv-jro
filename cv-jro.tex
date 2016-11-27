@@ -1,5 +1,8 @@
 \input{preamble.tex}
 
+% \newcommand{\longcontent}[1]{}
+\newcommand{\longcontent}[1]{#1}
+
 \newcommand{\docTitle}{Curriculum Vitae\xspace}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -16,18 +19,24 @@
 \section*{Research/Curatorial Appointments}
 \input{research.tex}
 
+\longcontent{
 \section*{Teaching Experience}
 \input{teaching.tex}
+}
 
 % Publications
 \nocite{*}
 \printbibliography
 
+\longcontent{
 \section*{Other Publications}
 \input{other-publications.tex}
+}
 
+\longcontent{
 \section*{Presentations (presenter in bold)}
 \input{presentations.tex}
+}
 
 \section*{Grants}
 \input{grants.tex}
@@ -35,14 +44,20 @@
 \section*{Fellowships, Awards \& Honors}
 \input{awards.tex}
 
+\longcontent{
 \section*{Software}
 \input{software.tex}
+}
 
+\longcontent{
 \section*{Professional Affiliations}
 \input{affiliations.tex}
+}
 
+\longcontent{
 \section*{Workshops Attended}
 \input{workshops-attended.tex}
+}
 
 \section*{Service}
 \input{service.tex}
@@ -50,8 +65,10 @@
 \section*{Outreach}
 \input{outreach.tex}
 
+\longcontent{
 \section*{Additional Research Experience \& Skills}
 \input{skills.tex}
+}
 
 % \section*{References}
 % {\raggedright
