@@ -1,0 +1,192 @@
+\documentclass[10pt]{article}
+%\usepackage{anysize}
+%\papersize{11in}{8.5in}
+%\marginsize{1in}{1in}{.5in}{.5in}
+\textwidth = 6.5 in
+\textheight = 9 in
+\oddsidemargin = 0.0 in
+\evensidemargin = 0.0 in
+\topmargin = -0.5 in
+\headheight = 0.35 in
+\headsep = 0.15 in
+\topskip = 0 in
+\footskip = 0.5 in
+\pagenumbering{arabic}
+\usepackage{setspace}
+\usepackage[usenames]{color}
+\usepackage[fleqn]{amsmath}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{verbatim}
+\usepackage{indentfirst}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage[table]{xcolor}
+\usepackage{ragged2e}
+\usepackage{xspace}
+\usepackage{parskip}
+\usepackage{tabulary}
+\usepackage{longtable}
+\usepackage[normalem]{ulem}
+\usepackage{hyperref}
+\hypersetup{pdfborder={0 0 0}, colorlinks=true, urlcolor=blue, linkcolor=black}
+\usepackage{titlesec}
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage{ifthen}
+
+%% Bibliography Formating %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \usepackage[round]{natbib}
+% \bibliographystyle{jro}
+\usepackage[bibstyle=bib/joaks-au-cv,backend=biber]{biblatex}
+% \DeclareFieldFormat[article,inbook,incollection,inproceedings,thesis]{url}{}
+
+% The following definition is copied from authortitle.bbx/authoryear.bbx
+% \defbibenvironment{nolabelbib}
+%   {\list
+%      {}
+%      {\setlength{\leftmargin}{\bibhang}%
+%       \setlength{\itemindent}{-\leftmargin}%
+%       \setlength{\itemsep}{\bibitemsep}%
+%       \setlength{\parsep}{\bibparsep}}}
+%   {\endlist}
+%   {\item}
+
+% Count total number of entries in each refsection
+% \AtDataInput{%
+%   \csnumgdef{entrycount:\therefsection}{%
+%     \csuse{entrycount:\therefsection}+1}}
+
+% Print the labelnumber as the total number of entries in the
+% current refsection, minus the actual labelnumber, plus one
+% \DeclareFieldFormat{labelnumber}{\mkbibdesc{#1}}
+% \newrobustcmd*{\mkbibdesc}[1]{%
+%   \number\numexpr\csuse{entrycount:\therefsection}+1-#1\relax}
+
+% No dot before number of articles
+% \usepackage{xpatch}
+% \xpatchbibmacro{volume+number+eid}{\setunit*{\adddot}}{}{}{}
+
+% % Change bibliography section title
+% \DefineBibliographyStrings{english}{%
+%   references = {Peer-reviewed Publications},%
+% }
+
+\bibliography{../bib/jro}
+
+\setlength{\bibitemsep}{0.5em}
+\setlength{\bibhang}{5mm}
+
+%% Format headers and footers %%%%%%%%%%%%%%%%%%%%
+\pagestyle{fancy}
+%\lhead{\ifthenelse{\value{page}=1}{}{\sffamily\footnotesize Jamie Oaks}}
+\lhead{\sffamily \emph{\docTitle} \\ Jamie R. Oaks}
+%\chead{\ifthenelse{\value{page}=1}{{\scshape \docTitle} \\ Jamie Richard Oaks}{\sffamily\footnotesize \docTitle}}
+%\rhead{\ifthenelse{\value{page}=1}{}{\sffamily\footnotesize \today}}
+\rhead{\sffamily \today}
+\cfoot{\sffamily\footnotesize Page \thepage\ of \pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+
+%% Format section titles %%%%%%%%%%%%%%%%%%%%%%%%%
+\titleformat{\section}[hang]
+    {\normalfont\Large\bfseries}
+    {\thesection}{1em}{}[]
+\titlespacing*{\section}
+    {0ex}{1.0ex plus .1ex minus .1ex}{0ex}
+    % {0ex}{0ex}{0ex}
+
+\titleformat{\subsection}[hang]
+    {\normalfont\large\bfseries}
+    {\thesubsection}{1em}{}[]
+\titlespacing*{\subsection}
+    {0ex}{1.0ex plus .1ex minus .1ex}{0ex}
+    % {0ex}{0ex}{0ex}
+
+\titleformat{\subsubsection}[hang]
+    {\normalfont\normalsize\bfseries}
+    {\thesubsubsection}{1em}{}[]
+\titlespacing*{\subsubsection}
+    {0ex}{1.0ex plus .1ex minus .1ex}{0ex}
+
+\titleformat{\paragraph}[hang]
+    {\normalsize\slshape\bfseries}
+    {}{}{}[]
+\titlespacing{\paragraph}
+    {0ex}{0.5ex plus .1ex minus .1ex}{0.5ex}
+
+\titleformat{\subparagraph}[runin]
+    {\normalsize\slshape\bfseries}
+    {}{}{}[---]
+\titlespacing{\subparagraph}
+    {\parindent}{0ex}{0.5ex}
+
+\newenvironment{mytitle}
+ {\parskip=0pt\par\nopagebreak\centering\LARGE\slshape}
+ {\par\noindent\ignorespacesafterend}
+\newenvironment{tightCenter}
+ {\parskip=0pt\par\nopagebreak\centering}
+ {\par\noindent\ignorespacesafterend}
+
+%% Format list environments %%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}}
+\renewcommand{\labelitemi}{$\circ$}
+
+\newenvironment{myEnumerate}{
+  \begin{enumerate}
+    \setlength{\itemsep}{0.25em}
+    \setlength{\parskip}{0pt}
+    \setlength{\parsep}{0.5em}}
+  {\end{enumerate}}
+
+\newenvironment{myItemize}{
+  \begin{itemize}
+    \setlength{\leftskip}{-4mm}
+    \setlength{\itemsep}{0.25em}
+    \setlength{\parskip}{0pt}
+    \setlength{\parsep}{0.5em}}
+  {\end{itemize}}
+
+%% Basic formatting and spacing %%%%%%%%%%%%%%%%%%%%%
+\setlength{\parindent}{0em}
+\setlength{\parskip}{0.5em}
+
+%% My functions %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\ignore}[1]{}
+\newcommand{\addTail}[1]{\textit{#1}.---}
+\newcommand{\super}[1]{\ensuremath{^{\textrm{#1}}}}
+\newcommand{\sub}[1]{\ensuremath{_{\textrm{#1}}}}
+\newcommand{\dC}{\ensuremath{^\circ{\textrm{C}}}}
+\newcommand{\tableSubItem}{\addtolength{\leftskip}{1em} \labelitemi \xspace}
+\newcommand{\myHangIndent}{\hangindent=5mm}
+\newcommand{\myIndent}{\hspace{5mm}}
+\newcommand{\ifArg}[2]{\ifthenelse{\equal{#1}{}}{}{#2}\xspace}
+
+\newcommand{\course}[3]{\textbf{#1}\\\textbf{#2:}{#3}}
+
+%% Create flexible CV item environment
+\newlength{\CVItemFirstCol}
+\newlength{\CVItemFirstColDefault}
+\setlength\CVItemFirstColDefault{2cm}
+\newlength{\CVItemSecondCol}
+\newcommand{\cvitem}[3]{
+    \ifthenelse{\equal{#1}{}}{
+        \setlength\CVItemFirstCol{\CVItemFirstColDefault}}{
+        \setlength\CVItemFirstCol{#1}}
+    \setlength\CVItemSecondCol{\textwidth}
+    \addtolength{\CVItemSecondCol}{-\CVItemFirstCol}
+    \addtolength{\CVItemSecondCol}{-2\tabcolsep}
+    % \begin{tabular}{ @{}p{\CVItemFirstCol} >{\begin{minipage}[t]{\CVItemSecondCol}\raggedright}l<{\end{minipage}}}
+    \begin{tabular}{ @{}p{\CVItemFirstCol} >{\begin{minipage}[t]{\CVItemSecondCol}}l<{\end{minipage}}}
+         #2 & #3
+    \end{tabular}}
+
+%% macro to make long strings breakable over lines
+\makeatletter
+\def\breakable#1{\xHyphen@te#1$\unskip}
+\def\xHyphen@te{\@ifnextchar${\@gobble}{\sw@p{\allowbreak{}\xHyphen@te}}}
+% \def\xHyphen@te{\@ifnextchar${\@gobble}{\sw@p{\hskip 0pt plus 1pt\xHyphen@te}}}
+\def\sw@p#1#2{#2#1}
+\makeatother
+
