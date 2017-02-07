@@ -36,22 +36,11 @@
 \usepackage{enumitem}
 \usepackage{ifthen}
 
-%% Bibliography Formating %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \usepackage[round]{natbib}
-% \bibliographystyle{jro}
-\usepackage[bibstyle=bib/joaks-au-cv,backend=biber]{biblatex}
-% \DeclareFieldFormat[article,inbook,incollection,inproceedings,thesis]{url}{}
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
 
-% The following definition is copied from authortitle.bbx/authoryear.bbx
-% \defbibenvironment{nolabelbib}
-%   {\list
-%      {}
-%      {\setlength{\leftmargin}{\bibhang}%
-%       \setlength{\itemindent}{-\leftmargin}%
-%       \setlength{\itemsep}{\bibitemsep}%
-%       \setlength{\parsep}{\bibparsep}}}
-%   {\endlist}
-%   {\item}
+%% Bibliography Formating %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[bibstyle=bib/joaks-au-cv,backend=biber]{biblatex}
 
 % Count total number of entries in each refsection
 % \AtDataInput{%
@@ -64,15 +53,6 @@
 % \newrobustcmd*{\mkbibdesc}[1]{%
 %   \number\numexpr\csuse{entrycount:\therefsection}+1-#1\relax}
 
-% No dot before number of articles
-% \usepackage{xpatch}
-% \xpatchbibmacro{volume+number+eid}{\setunit*{\adddot}}{}{}{}
-
-% % Change bibliography section title
-% \DefineBibliographyStrings{english}{%
-%   references = {Peer-reviewed Publications},%
-% }
-
 \bibliography{../bib/jro}
 
 \setlength{\bibitemsep}{0.5em}
@@ -80,10 +60,7 @@
 
 %% Format headers and footers %%%%%%%%%%%%%%%%%%%%
 \pagestyle{fancy}
-%\lhead{\ifthenelse{\value{page}=1}{}{\sffamily\footnotesize Jamie Oaks}}
-\lhead{\sffamily \emph{\docTitle} \\ Jamie R. Oaks}
-%\chead{\ifthenelse{\value{page}=1}{{\scshape \docTitle} \\ Jamie Richard Oaks}{\sffamily\footnotesize \docTitle}}
-%\rhead{\ifthenelse{\value{page}=1}{}{\sffamily\footnotesize \today}}
+\lhead{\sffamily \emph{\docTitle} \\ Jamie R.\ Oaks}
 \rhead{\sffamily \today}
 \cfoot{\sffamily\footnotesize Page \thepage\ of \pageref{LastPage}}
 \renewcommand{\headrulewidth}{0.4pt}
@@ -112,7 +89,7 @@
 
 \titleformat{\paragraph}[hang]
     {\normalsize\slshape\bfseries}
-    {}{}{}[]
+    {\theparagraph}{1em}{}[]
 \titlespacing{\paragraph}
     {0ex}{0.5ex plus .1ex minus .1ex}{0.5ex}
 
@@ -123,7 +100,7 @@
     {\parindent}{0ex}{0.5ex}
 
 \newenvironment{mytitle}
- {\parskip=0pt\par\nopagebreak\centering\LARGE\slshape}
+ {\parskip=0pt\par\nopagebreak\centering\large\slshape\bfseries}
  {\par\noindent\ignorespacesafterend}
 \newenvironment{tightCenter}
  {\parskip=0pt\par\nopagebreak\centering}
@@ -147,6 +124,22 @@
     \setlength{\parskip}{0pt}
     \setlength{\parsep}{0.5em}}
   {\end{itemize}}
+
+\newenvironment{tightItemize}{%
+\begin{itemize}[noitemsep, topsep=0pt, parsep=0pt, partopsep=0pt]}
+{\end{itemize}}
+
+\newenvironment{veryTightItemize}{%
+\begin{itemize}[noitemsep, topsep=0pt, parsep=0pt, partopsep=0pt, leftmargin=*]}
+{\end{itemize}}
+
+\newenvironment{tightEnumerate}{%
+\begin{enumerate}[noitemsep, topsep=0pt, parsep=0pt, partopsep=0pt]}
+{\end{enumerate}}
+
+\newenvironment{veryTightEnumerate}{%
+\begin{enumerate}[noitemsep, topsep=0pt, parsep=0pt, partopsep=0pt, leftmargin=*]}
+{\end{enumerate}}
 
 %% Basic formatting and spacing %%%%%%%%%%%%%%%%%%%%%
 \setlength{\parindent}{0em}

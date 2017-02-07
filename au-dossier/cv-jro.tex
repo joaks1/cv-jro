@@ -6,7 +6,7 @@
 \newcommand{\oldcontent}[1]{}
 % \newcommand{\oldcontent}[1]{#1}
 
-\newcommand{\docTitle}{Curriculum Vitae\xspace}
+\newcommand{\docTitle}{Biographical Data\xspace}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -14,6 +14,12 @@
 \thispagestyle{empty}
 % \raggedright
 \singlespacing
+
+\begin{mytitle}
+    Auburn University \\
+    Standard Biographical Data \\
+    For Submission with Promotion/Tenure Review
+\end{mytitle}
 
 \input{contact-info.tex}
 
@@ -76,12 +82,17 @@
 \input{courses-taught-table.tex}
 
 \subsubsection{Graduate students, undergraduate students, postdoctoral researchers}
+
+\paragraph{As major professor}
 \input{advisees-major.tex}
 
+\paragraph{As committee member}
 \input{advisees-committee.tex}
 
+\paragraph{Undergraduate students}
 \input{advisees-undergrad.tex}
 
+\paragraph{Postdoctoral researchers}
 \input{advisees-postdocs.tex}
 
 \subsubsection{Courses and curricula developed}
@@ -118,7 +129,7 @@ None.
 \nocite{*}
 \printbibliography[keyword=OaksPeerReviewed, heading=none]
 
-\subsubsection{Other publications}
+\paragraph{Other publications}
 \input{../other-publications.tex}
 
 \subsubsection{Presented papers and lectures (presenter in bold)}
@@ -144,11 +155,11 @@ None.
 \subsubsection{Other research/creative contributions}
  
 \paragraph{Websites}
-\begin{itemize}
+\begin{tightItemize}
     \item Phyletica Lab website: \url{http:://phyletica.org}
     \item PyMsBayes Documentation: \url{http:://joaks1.github.io/PyMsBayes}
     \item SumTimes Documentation: \url{http:://phyletica.github.io/SumTimes}
-\end{itemize}
+\end{tightItemize}
 
 \paragraph{Software}
 \input{../software.tex}
