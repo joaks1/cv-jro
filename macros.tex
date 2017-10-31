@@ -1,0 +1,39 @@
+%% My functions %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\ignore}[1]{}
+\newcommand{\addTail}[1]{\textit{#1}.---}
+\newcommand{\super}[1]{\ensuremath{^{\textrm{#1}}}}
+\newcommand{\sub}[1]{\ensuremath{_{\textrm{#1}}}}
+\newcommand{\dC}{\ensuremath{^\circ{\textrm{C}}}}
+\newcommand{\tableSubItem}{\addtolength{\leftskip}{1em} \labelitemi \xspace}
+\newcommand{\myHangIndent}{\hangindent=5mm}
+\newcommand{\myIndent}{\hspace{5mm}}
+\newcommand{\ifArg}[2]{\ifthenelse{\equal{#1}{}}{}{#2}\xspace}
+
+\newcommand{\course}[3]{\textbf{#1}\\\textbf{#2:}{#3}}
+\newcommand{\gradadvisee}{\ensuremath{^\ddagger}\xspace}
+\newcommand{\undergradadvisee}{\ensuremath{^\dagger}\xspace}
+
+%% Create flexible CV item environment
+\newlength{\CVItemFirstCol}
+\newlength{\CVItemFirstColDefault}
+\setlength\CVItemFirstColDefault{2cm}
+\newlength{\CVItemSecondCol}
+\newcommand{\cvitem}[3]{
+    \ifthenelse{\equal{#1}{}}{
+        \setlength\CVItemFirstCol{\CVItemFirstColDefault}}{
+        \setlength\CVItemFirstCol{#1}}
+    \setlength\CVItemSecondCol{\textwidth}
+    \addtolength{\CVItemSecondCol}{-\CVItemFirstCol}
+    \addtolength{\CVItemSecondCol}{-2\tabcolsep}
+    % \begin{tabular}{ @{}p{\CVItemFirstCol} >{\begin{minipage}[t]{\CVItemSecondCol}\raggedright}l<{\end{minipage}}}
+    \begin{tabular}{ @{}p{\CVItemFirstCol} >{\begin{minipage}[t]{\CVItemSecondCol}}l<{\end{minipage}}}
+         #2 & #3
+    \end{tabular}}
+
+%% macro to make long strings breakable over lines
+\makeatletter
+\def\breakable#1{\xHyphen@te#1$\unskip}
+\def\xHyphen@te{\@ifnextchar${\@gobble}{\sw@p{\allowbreak{}\xHyphen@te}}}
+% \def\xHyphen@te{\@ifnextchar${\@gobble}{\sw@p{\hskip 0pt plus 1pt\xHyphen@te}}}
+\def\sw@p#1#2{#2#1}
+\makeatother
