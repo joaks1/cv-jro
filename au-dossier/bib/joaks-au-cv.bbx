@@ -26,11 +26,18 @@
 \DeclareFieldFormat{shorthandwidth}{#1}
 \DeclareFieldFormat{extrayear}{}
 %% create link using doi or url
+% \DeclareFieldFormat{doi}{%
+%     \ifboolexpr{
+%         not test {\iffieldundef{doi}}
+%     }%
+%     {\href{http://dx.doi.org/#1}{DOI: http://dx.doi.org/#1.}}%
+%     {}%
+% }
 \DeclareFieldFormat{doi}{%
     \ifboolexpr{
         not test {\iffieldundef{doi}}
     }%
-    {\href{http://dx.doi.org/#1}{link.}}%
+    {\href{http://dx.doi.org/#1}{DOI: \seqsplit{#1}.}}%
     {}%
 }
 \DeclareFieldFormat{url}{%
@@ -38,13 +45,19 @@
         test {\iffieldundef{doi}}
         and
         not test {\iffieldundef{url}}
-    }{\href{#1}{link.}}%
+    }{\href{#1}{URL: \seqsplit{#1}.}}%
     {}%
 }
+\DeclareFieldFormat{eprint}{}
+
 \DeclareDatamodelFields[type=field, datatype=literal, skipout=false]{cvnote1}
 \DeclareFieldFormat{cvnote1}{\addspace*#1.}
-\DeclareDatamodelFields[type=field, datatype=literal, skipout=false]{effort}
-\DeclareFieldFormat{effort}{\addspace#1\% JRO.}
+\DeclareDatamodelFields[type=field, datatype=literal, skipout=false]{jroeffort}
+\DeclareFieldFormat{jroeffort}{\addspace#1\% Oaks.}
+\DeclareDatamodelFields[type=field, datatype=literal, skipout=false]{labeffort}
+\DeclareFieldFormat{labeffort}{\addspace#1\% Oaks Lab}
+\DeclareDatamodelFields[type=field, datatype=literal, skipout=false]{aueffort}
+\DeclareFieldFormat{aueffort}{\addspace#1\% AU}
 
 % Change bibliography section title
 \DefineBibliographyStrings{english}{%
@@ -64,6 +77,19 @@
   \setunit{\addspace}%
   \setunit{\addcolon\space}%
   \newunit}
+
+\newbibmacro*{effortlist}{%
+  \iffieldundef{aueffort}
+    {}
+    {\printfield{aueffort}\setunit{\addcomma\space}}%
+  \iffieldundef{labeffort}
+    {}
+    {\printfield{labeffort}\setunit{\addcomma\space}}%
+  \iffieldundef{jroeffort}
+    {}
+    {\printfield{jroeffort}}%
+    \newunit}
+
 
 \DeclareBibliographyDriver{article}{%
   \ifboolexpr{
@@ -94,8 +120,8 @@
   \iftoggle{bbx:isbn}
     {\printfield{issn}}
     {}%
-  % \newunit\newblock
-  % \usebibmacro{doi+eprint+url}%
+  \newunit\newblock
+  \usebibmacro{doi+eprint+url}%
   \newunit\newblock
   \usebibmacro{addendum+pubstate}%
   \setunit{\bibpagerefpunct}\newblock
@@ -109,6 +135,58 @@
   \newunit\newblock
   \printfield{cvnote1}%
   \newunit\newblock
-  \printfield{effort}}
+  \usebibmacro{effortlist}%
+  \newunit\newblock}
+
+\DeclareBibliographyDriver{inproceedings}{%
+  \usebibmacro{bibindex}%
+  \usebibmacro{begentry}%
+  \usebibmacro{author/translator+others}%
+  \setunit{\printdelim{nametitledelim}}\newblock
+  \usebibmacro{title}%
+  \newunit
+  \printlist{language}%
+  \newunit\newblock
+  \usebibmacro{byauthor}%
+  \newunit\newblock
+  %\usebibmacro{in:}%
+  \usebibmacro{maintitle+booktitle}%
+  \newunit\newblock
+  \usebibmacro{event+venue+date}%
+  \newunit\newblock
+  \usebibmacro{byeditor+others}%
+  \newunit\newblock
+  \iffieldundef{maintitle}
+    {\printfield{volume}%
+     \printfield{part}}
+    {}%
+  \newunit
+  \printfield{volumes}%
+  \newunit\newblock
+  \usebibmacro{series+number}%
+  \newunit\newblock
+  \printfield{note}%
+  \newunit\newblock
+  \printlist{organization}%
+  \newunit
+  \usebibmacro{publisher+location+date}%
+  \newunit\newblock
+  \usebibmacro{chapter+pages}%
+  \newunit\newblock
+  \iftoggle{bbx:isbn}
+    {\printfield{isbn}}
+    {}%
+  \newunit\newblock
+  \usebibmacro{doi+eprint+url}%
+  \newunit\newblock
+  \usebibmacro{addendum+pubstate}%
+  \setunit{\bibpagerefpunct}\newblock
+  \usebibmacro{pageref}%
+  \newunit\newblock
+  \iftoggle{bbx:related}
+    {\usebibmacro{related:init}%
+     \usebibmacro{related}}
+    {}%
+  \usebibmacro{finentry}}
 
 \endinput

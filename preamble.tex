@@ -38,7 +38,7 @@
 %% Bibliography Formating %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % \usepackage[round]{natbib}
 % \bibliographystyle{jro}
-\usepackage[bibstyle=bib/joaks-cv,backend=biber]{biblatex}
+\usepackage[bibstyle=bib/joaks-cv,backend=biber,bibencoding=utf8]{biblatex}
 
 % No dot before number of articles
 % \usepackage{xpatch}
@@ -49,7 +49,8 @@
 %   references = {Peer-reviewed Publications},%
 % }
 
-\bibliography{bib/jro}
+% \bibliography{bib/jro}
+\addbibresource{references.bib}
 
 \setlength{\bibitemsep}{0.5em}
 \setlength{\bibhang}{5mm}

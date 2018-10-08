@@ -1,4 +1,4 @@
-\documentclass[10pt]{article}
+\documentclass[11pt]{article}
 %\usepackage{anysize}
 %\papersize{11in}{8.5in}
 %\marginsize{1in}{1in}{.5in}{.5in}
@@ -28,19 +28,37 @@
 \usepackage{tabulary}
 \usepackage{longtable}
 \usepackage[normalem]{ulem}
-\usepackage{hyperref}
-\hypersetup{pdfborder={0 0 0}, colorlinks=true, urlcolor=blue, linkcolor=black}
 \usepackage{titlesec}
 \usepackage{lastpage}
 \usepackage{fancyhdr}
 \usepackage{enumitem}
 \usepackage{ifthen}
+\usepackage{seqsplit}
 
 \setcounter{secnumdepth}{4}
 \setcounter{tocdepth}{4}
 
+%% Set up color palettes %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Color palette GreenOrange_6 from
+% https://jiffyclub.github.io/palettable/tableau/
+\definecolor{pgreen}     {RGB}{50,162,81}
+\definecolor{porange}    {RGB}{255,127,15}
+\definecolor{pblue}      {RGB}{60,183,204}
+\definecolor{pyellow}    {RGB}{255,217,74}
+\definecolor{pteal}      {RGB}{57,115,124}
+\definecolor{pauburn}    {RGB}{184,90,13}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{hyperref}
+\hypersetup{pdfborder={0 0 0},
+            colorlinks=true,
+            % colorlinks=false,
+            urlcolor=pauburn,
+            linkcolor=pteal,
+            citecolor=pteal}
+
 %% Bibliography Formating %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage[bibstyle=bib/joaks-au-cv,backend=biber]{biblatex}
+\usepackage[bibstyle=bib/joaks-au-cv,backend=biber,bibencoding=utf8]{biblatex}
 
 % Count total number of entries in each refsection
 % \AtDataInput{%
@@ -53,10 +71,80 @@
 % \newrobustcmd*{\mkbibdesc}[1]{%
 %   \number\numexpr\csuse{entrycount:\therefsection}+1-#1\relax}
 
-\bibliography{../bib/jro}
+% \bibliography{../bib/jro}
+\addbibresource{references.bib}
+\addbibresource{presentations.bib}
+
+% Format annotated authors
+\makeatletter
+\newcommand{\ssymbol}[1]{\ensuremath{^{\@fnsymbol{#1}}}}
+\makeatother
+\newcommand{\menteesymbol}{\ssymbol{2}\xspace}
+\newcommand{\ugsymbol}{\ssymbol{2}\xspace}
+\newcommand{\mssymbol}{\ssymbol{3}\xspace}
+\newcommand{\phdsymbol}{\ssymbol{3}\xspace}
+\newcommand{\postdocsymbol}{\ssymbol{4}\xspace}
+\renewcommand*{\mkbibnamegiven}[1]{%
+  \ifitemannotation{joaks}
+    {\textbf{#1}}
+    {#1}}
+
+% Complicated logic cascade for how to annotate authors
+\newcommand{\markpresenter}[1]{\textit{#1}}
+\renewcommand*{\mkbibnamefamily}[1]{%
+  \ifitemannotation{joaks}
+  {\ifitemannotation{presenter}{\textbf{\markpresenter{#1}}}{\textbf{#1}}}
+    {\ifitemannotation{postdoc}
+        {\ifitemannotation{presenter}{\postdocsymbol{}\markpresenter{#1}}{\postdocsymbol{}#1}}
+        {\ifitemannotation{phdstudent}
+            {\ifitemannotation{presenter}{\phdsymbol{}\markpresenter{#1}}{\phdsymbol{}#1}}
+            {\ifitemannotation{msstudent}
+                {\ifitemannotation{presenter}{\mssymbol{}\markpresenter{#1}}{\mssymbol{}#1}}
+                {\ifitemannotation{ugstudent}
+                    {\ifitemannotation{presenter}{\ugsymbol{}\markpresenter{#1}}{\ugsymbol{}#1}}
+                    {\ifitemannotation{mentee}
+                        {\ifitemannotation{presenter}{\menteesymbol{}\markpresenter{#1}}{\menteesymbol{}#1}}
+                        {\ifitemannotation{presenter}
+                            {\markpresenter{#1}}
+                            {#1}}}}}}}}
+
+% Setup biblatex checks and filters
+\defbibfilter{cvpapers}{%
+    ( keyword=OaksPeerReviewed or keyword=OaksCVPreprint )
+}
+\defbibfilter{aupresentation}{%
+    keyword=presentation and keyword=au
+}
+\defbibfilter{beforeaupresentation}{%
+    keyword=presentation and not keyword=au
+}
+\defbibcheck{afteraustart}{%
+    \iffieldint{year}
+        {\ifnumless{\thefield{year}}{2016}
+            {\skipentry}
+            {}}
+        {\skipentry}}
+\defbibcheck{beforeaustart}{%
+    \iffieldint{year}
+        {\ifnumgreater{\thefield{year}}{2016}
+            {\skipentry}
+            {}}
+        {\skipentry}}
 
 \setlength{\bibitemsep}{0.5em}
 \setlength{\bibhang}{5mm}
+
+% Reverse enumerated pub lists
+\usepackage{etaremune}
+\defbibenvironment{bibliography}
+  {\etaremune
+     {}
+     {\setlength{\leftmargin}{\bibhang}%
+      \setlength{\itemindent}{-\leftmargin}%
+      \setlength{\itemsep}{\bibitemsep}%
+      \setlength{\parsep}{\bibparsep}}}
+  {\endetaremune}
+  {\item}
 
 %% Format headers and footers %%%%%%%%%%%%%%%%%%%%
 \pagestyle{fancy}

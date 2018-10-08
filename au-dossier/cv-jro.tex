@@ -12,61 +12,47 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
-\thispagestyle{empty}
+% \thispagestyle{empty}
 % \raggedright
 \singlespacing
 
+\tableofcontents
+
+\newpage
+
+\section{Standard Biographical Data}
+
+\bigskip
 \begin{mytitle}
     Auburn University \\
     Standard Biographical Data \\
     For Submission with Promotion/Tenure Review
 \end{mytitle}
 
+\bigskip
 \input{contact-info.tex}
 
-\section{Education}
+\bigskip
+\subsection*{Education}
 \input{education.tex}
 
-\section{Professional Experience}
+\bigskip
+\subsection*{Professional Experience}
 \input{professional-experience.tex}
 
+\newpage
+
 \section{Summary of activities at Auburn University}
+\input{summary.tex}
 
-\subsection{Teaching \& Mentoring (45\%)}
+\newpage
 
-\subsubsection{Courses taught}
-\input{courses-taught-list.tex}
-
-\subsubsection{Mentoring}
-\input{mentoring-summary.tex}
-
-\subsection{Research (50\%)}
-
-\subsubsection{Funding:}
-\input{funding-summary.tex}
-
-\subsubsection{Publications:}
-\input{publication-summary.tex}
-
-\subsubsection{Presentations:}
-\input{presentations-summary.tex}
-
-\subsubsection{Software:}
-\input{software-summary.tex}
-
-\subsection{Outreach \& Service (5\%)}
-
-\subsubsection{Professional:}
-\input{outreach-professional-summary.tex}
-
-\subsubsection{Departmental:}
-\input{outreach-departmental-summary.tex}
 
 \section{Allocation of time and effort}
 \begin{tabular}{ l l l }
     Allocation of time: & \underline{Activity} & \underline{Percent} \\
-    & Research & 50\% \\
-    & Teaching & 45\% \\
+    & Teaching & 50\% \\
+    & Research & 45\% \\
     & Service & 5\% \\
 \end{tabular}
 
@@ -115,6 +101,9 @@ None.
 \input{teaching-philosophy.tex}
 
 \subsection{Research/creative work}
+\ugsymbol{}mentored undergraduate student;
+\phdsymbol{}mentored graduate student;
+\postdocsymbol{}mentored postdoc.
 
 \subsubsection{Book chapters}
 None.
@@ -127,21 +116,32 @@ None.
 
 % \paragraph{Popular articles}
 \paragraph{Peer-reviewed publications}
-% \nocite{*}
-% \printbibliography[keyword=OaksPeerReviewed, heading=none]% , env=nolabelbib]
-% \printbibliography[heading=none]
 
+\subparagraph{Since starting at AU}
 \nocite{*}
-\printbibliography[keyword=OaksPeerReviewed, heading=none]
+\printbibliography[filter=cvpapers, check=afteraustart, heading=none]
+
+\subparagraph{Before starting at AU}
+\nocite{*}
+\printbibliography[filter=cvpapers, check=beforeaustart, heading=none]
 
 \paragraph{Other publications}
 \input{../other-publications.tex}
 
 \subsubsection{Presented papers and lectures}
-Presenter in bold; \gradadvisee{}mentored graduate student;
-\undergradadvisee{}mentored undergraduate student
+Presenter in italics;
+\ugsymbol{}mentored undergraduate student;
+\phdsymbol{}mentored graduate student;
+\postdocsymbol{}mentored postdoc.
 
-\input{../presentations.tex}
+% \input{../presentations.tex}
+\subparagraph{Since starting at AU}
+\nocite{*}
+\printbibliography[filter=aupresentation, heading=none]
+
+\subparagraph{Before starting at AU}
+\nocite{*}
+\printbibliography[filter=beforeaupresentation, heading=none]
 
 % \paragraph{Invited seminars}
 
@@ -151,20 +151,21 @@ Presenter in bold; \gradadvisee{}mentored graduate student;
 
 % \paragraph{Student presentations (titles not included) that include me as coauthor (*denotes undergraduate student, otherwise graduate student)}
 
-\subsubsection{Exhibitions}
-None.
+% \subsubsection{Exhibitions}
+% None.
 
-\subsubsection{Performances}
-None.
+% \subsubsection{Performances}
+% None.
 
-\subsubsection{Patents and inventions}
-None.
+% \subsubsection{Patents and inventions}
+% None.
 
 \subsubsection{Other research/creative contributions}
  
 \paragraph{Websites}
 \begin{tightItemize}
     \item Phyletica Lab website: \url{http://phyletica.org}
+    \item Ecoevolity Documentation: \url{http://phyletica.org/ecoevolity}
     \item PyMsBayes Documentation: \url{http://joaks1.github.io/PyMsBayes}
     % \item SumTimes Documentation: \url{http://phyletica.github.io/SumTimes}
 \end{tightItemize}
@@ -174,11 +175,13 @@ None.
 
 \subsubsection{Grants and contracts}
 
-\paragraph{Funded research awards as a PI}
+\paragraph{Research awards as a PI}
+Unfunded proposals indicated as ``not funded.''
+
 \input{grants-table.tex}
 
-\paragraph{Unfunded grant proposals}
-None.
+% \paragraph{Unfunded grant proposals}
+% None.
 
 \paragraph{Funded research awards as a student}
 \input{grants-as-student-table.tex}
@@ -191,11 +194,22 @@ None.
 
 \subsection{Service}
 
-\subsubsection{Departmental service}
+\subsubsection{University service}
 
-\cvitem{}{2017--present}{Committee member of the DBS Graduate Studies Committee}
-\cvitem{}{2016--present}{Committee member of the DBS Informatics Steering Group}
-\cvitem{}{2016--present}{AUMNH Curator of Reptiles \& Amphibians}
+\cvitem{6em}{2018--2021}{AU: Member of University Senate Computing Committee}
+\cvitem{6em}{2018--2019}{COSAM: Member of search committee for a faculty position in
+    Biostatistics/Bionformatics}
+\cvitem{6em}{2018}{COSAM: Member of search committee for Specialist I position in
+    Communications and Marketing}
+\cvitem{6em}{2018--present}{DBS: Member of search committee for a Museum Director}
+\cvitem{6em}{2018--present}{DBS: Member of committee assigned with implementing new Student Learning Outcome (SLO) for written communication (DBS SLO 4)}
+\cvitem{6em}{2018}{AU: Snake safety training at E.W.\ Shell Fisheries
+    Center; 61 participants, including undergraduate and graduate
+    students, postdocs, faculty, and staff}
+\cvitem{6em}{2017--present}{DBS: Committee member of the DBS Graduate Studies Committee}
+\cvitem{6em}{2017}{AU: Snake safety training at E.W.\ Shell Fisheries Center}
+\cvitem{6em}{2016--2018}{DBS: Committee member of the DBS Informatics Steering Group}
+\cvitem{6em}{2016--present}{DBS: AUMNH Curator of Reptiles \& Amphibians}
 
 \subsubsection{Professional service}
 \input{../service.tex}
