@@ -109,14 +109,26 @@
                             {#1}}}}}}}}
 
 % Setup biblatex checks and filters
+\defbibfilter{cvpreprints}{%
+    keyword=OaksCVPreprint and not keyword=OaksPeerReviewed
+}
 \defbibfilter{cvpapers}{%
     ( keyword=OaksPeerReviewed or keyword=OaksCVPreprint )
 }
+\defbibfilter{cvpapersnopreprints}{%
+    keyword=OaksPeerReviewed and not keyword=OaksCVPreprint
+}
+\defbibfilter{auinvitedpresentation}{%
+    keyword=presentation and keyword=au and keyword=invited
+}
+\defbibfilter{beforeauinvitedpresentation}{%
+    keyword=presentation and not keyword=au and keyword=invited
+}
 \defbibfilter{aupresentation}{%
-    keyword=presentation and keyword=au
+    keyword=presentation and keyword=au and not keyword=invited
 }
 \defbibfilter{beforeaupresentation}{%
-    keyword=presentation and not keyword=au
+    keyword=presentation and not keyword=au and not keyword=invited
 }
 \defbibcheck{afteraustart}{%
     \iffieldint{year}
@@ -183,7 +195,7 @@
 
 \titleformat{\subparagraph}[runin]
     {\normalsize\slshape\bfseries}
-    {}{}{}[---]
+    {}{}{}[:]
 \titlespacing{\subparagraph}
     {\parindent}{0ex}{0.5ex}
 

@@ -70,17 +70,33 @@
 
 \subsubsection{Graduate students, undergraduate students, postdoctoral researchers}
 
-\paragraph{As major professor}
-\input{advisees-major.tex}
+\paragraph{As major professor (completed)}
 
-\paragraph{As committee member}
-\input{advisees-committee.tex}
+\input{advisees-major-finished.tex}
+
+\paragraph{As major professor (active)}
+
+\input{advisees-major-active.tex}
+
+\paragraph{As committee member (completed)}
+
+\input{advisees-committee-finished.tex}
+
+\paragraph{As committee member (active)}
+
+\input{advisees-committee-active.tex}
 
 \paragraph{Undergraduate students}
+
 \input{advisees-undergrad.tex}
 
-\paragraph{Postdoctoral researchers}
-\input{advisees-postdocs.tex}
+\paragraph{Postdoctoral researchers (completed)}
+
+\input{advisees-postdocs-finished.tex}
+
+\paragraph{Postdoctoral researchers (active)}
+
+\input{advisees-postdocs-active.tex}
 
 \paragraph{Graduate student honors and awards}
 \input{advisees-grad-awards.tex}
@@ -105,25 +121,29 @@ None.
 \phdsymbol{}mentored graduate student;
 \postdocsymbol{}mentored postdoc.
 
-\subsubsection{Book chapters}
+\subsubsection{Books}
 None.
 
-\subsubsection{Article length publications}
+\subsubsection{Article-length publications}
 
 % \paragraph{Non-peer-reviewed notes}
 
 % \paragraph{Book reviews and commentaries}
 
 % \paragraph{Popular articles}
+\paragraph{Preprints (in review)}
+\nocite{*}
+\printbibliography[filter=cvpreprints, heading=none]
+
 \paragraph{Peer-reviewed publications}
 
 \subparagraph{Since starting at AU}
 \nocite{*}
-\printbibliography[filter=cvpapers, check=afteraustart, heading=none]
+\printbibliography[filter=cvpapersnopreprints, check=afteraustart, heading=none]
 
 \subparagraph{Before starting at AU}
 \nocite{*}
-\printbibliography[filter=cvpapers, check=beforeaustart, heading=none]
+\printbibliography[filter=cvpapersnopreprints, check=beforeaustart, heading=none]
 
 \paragraph{Other publications}
 \input{../other-publications.tex}
@@ -134,7 +154,16 @@ Presenter in italics;
 \phdsymbol{}mentored graduate student;
 \postdocsymbol{}mentored postdoc.
 
-% \input{../presentations.tex}
+\paragraph{Invited seminars}
+\subparagraph{Since starting at AU}
+\nocite{*}
+\printbibliography[filter=auinvitedpresentation, heading=none]
+
+\subparagraph{Before starting at AU}
+\nocite{*}
+\printbibliography[filter=beforeauinvitedpresentation, heading=none]
+
+\paragraph{Conference presentations}
 \subparagraph{Since starting at AU}
 \nocite{*}
 \printbibliography[filter=aupresentation, heading=none]
@@ -151,14 +180,14 @@ Presenter in italics;
 
 % \paragraph{Student presentations (titles not included) that include me as coauthor (*denotes undergraduate student, otherwise graduate student)}
 
-% \subsubsection{Exhibitions}
-% None.
+\subsubsection{Exhibitions}
+None.
 
-% \subsubsection{Performances}
-% None.
+\subsubsection{Performances}
+None.
 
-% \subsubsection{Patents and inventions}
-% None.
+\subsubsection{Patents and inventions}
+None.
 
 \subsubsection{Other research/creative contributions}
  
@@ -190,7 +219,32 @@ Unfunded proposals indicated as ``not funded.''
 \input{research-statement.tex}
 
 \subsection{Outreach}
+
+\subsubsection{Commentary}
+None.
+
+\subsubsection{Activities and Products}
+
+\paragraph{Instructional activities}
 \input{../outreach.tex}
+
+\paragraph{Technical assistance}
+None.
+
+\paragraph{Outreach publications}
+None.
+
+\paragraph{Electronic products}
+None.
+
+\paragraph{Other outreach products}
+None.
+
+\paragraph{Copyrights, patents, and inventions}
+None.
+
+\paragraph{Contracts, grants, and gifts}
+None.
 
 \subsection{Service}
 
