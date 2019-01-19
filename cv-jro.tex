@@ -29,20 +29,38 @@
 }
 
 % Publications
+\section*{Publications}
+\ugsymbol{}mentored undergraduate student;
+\phdsymbol{}mentored graduate student;
+\postdocsymbol{}mentored postdoc.
+
+\subsection*{Preprints (in review)}
 \nocite{*}
-\printbibliography[keyword=OaksPeerReviewed, keyword=OaksCVPreprint]
+\printbibliography[filter=cvpreprints, heading=none]
+
+\subsection*{Peer-reviewed publications}
+\nocite{*}
+\printbibliography[filter=cvpapersnopreprints, heading=none]
 
 \longcontent{
-\section*{Other Publications}
+\subsection*{Other Publications}
 \input{other-publications.tex}
 }
 
 \longcontent{
 \section*{Presentations}
-Presenter in bold; \gradadvisee{}mentored graduate student;
-\undergradadvisee{}mentored undergraduate student
+Presenter in italics;
+\ugsymbol{}mentored undergraduate student;
+\phdsymbol{}mentored graduate student;
+\postdocsymbol{}mentored postdoc.
 
-\input{presentations.tex}
+\subsection*{Invited seminars}
+\nocite{*}
+\printbibliography[filter=invitedpresentation, heading=none]
+
+\subsection*{Conference presentations}
+\nocite{*}
+\printbibliography[filter=presentation, heading=none]
 }
 
 \section*{Grants}

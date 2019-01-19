@@ -51,9 +51,96 @@
 
 % \bibliography{bib/jro}
 \addbibresource{references.bib}
+\addbibresource{presentations.bib}
+
+% Format annotated authors
+\makeatletter
+\newcommand{\ssymbol}[1]{\ensuremath{^{\@fnsymbol{#1}}}}
+\makeatother
+\newcommand{\menteesymbol}{\ssymbol{2}\xspace}
+\newcommand{\ugsymbol}{\ssymbol{2}\xspace}
+\newcommand{\mssymbol}{\ssymbol{3}\xspace}
+\newcommand{\phdsymbol}{\ssymbol{3}\xspace}
+\newcommand{\postdocsymbol}{\ssymbol{4}\xspace}
+\renewcommand*{\mkbibnamegiven}[1]{%
+  \ifitemannotation{joaks}
+    {\textbf{#1}}
+    {#1}}
+
+% Complicated logic cascade for how to annotate authors
+\newcommand{\markpresenter}[1]{\textit{#1}}
+\renewcommand*{\mkbibnamefamily}[1]{%
+  \ifitemannotation{joaks}
+  {\ifitemannotation{presenter}{\textbf{\markpresenter{#1}}}{\textbf{#1}}}
+    {\ifitemannotation{postdoc}
+        {\ifitemannotation{presenter}{\postdocsymbol{}\markpresenter{#1}}{\postdocsymbol{}#1}}
+        {\ifitemannotation{phdstudent}
+            {\ifitemannotation{presenter}{\phdsymbol{}\markpresenter{#1}}{\phdsymbol{}#1}}
+            {\ifitemannotation{msstudent}
+                {\ifitemannotation{presenter}{\mssymbol{}\markpresenter{#1}}{\mssymbol{}#1}}
+                {\ifitemannotation{ugstudent}
+                    {\ifitemannotation{presenter}{\ugsymbol{}\markpresenter{#1}}{\ugsymbol{}#1}}
+                    {\ifitemannotation{mentee}
+                        {\ifitemannotation{presenter}{\menteesymbol{}\markpresenter{#1}}{\menteesymbol{}#1}}
+                        {\ifitemannotation{presenter}
+                            {\markpresenter{#1}}
+                            {#1}}}}}}}}
+
+% Setup biblatex checks and filters
+\defbibfilter{cvpreprints}{%
+    keyword=OaksCVPreprint and not keyword=OaksPeerReviewed
+}
+\defbibfilter{cvpapers}{%
+    ( keyword=OaksPeerReviewed or keyword=OaksCVPreprint )
+}
+\defbibfilter{cvpapersnopreprints}{%
+    keyword=OaksPeerReviewed and not keyword=OaksCVPreprint
+}
+\defbibfilter{invitedpresentation}{%
+    keyword=presentation and keyword=invited
+}
+\defbibfilter{auinvitedpresentation}{%
+    keyword=presentation and keyword=au and keyword=invited
+}
+\defbibfilter{beforeauinvitedpresentation}{%
+    keyword=presentation and not keyword=au and keyword=invited
+}
+\defbibfilter{presentation}{%
+    keyword=presentation and not keyword=invited
+}
+\defbibfilter{aupresentation}{%
+    keyword=presentation and keyword=au and not keyword=invited
+}
+\defbibfilter{beforeaupresentation}{%
+    keyword=presentation and not keyword=au and not keyword=invited
+}
+\defbibcheck{afteraustart}{%
+    \iffieldint{year}
+        {\ifnumless{\thefield{year}}{2016}
+            {\skipentry}
+            {}}
+        {\skipentry}}
+\defbibcheck{beforeaustart}{%
+    \iffieldint{year}
+        {\ifnumgreater{\thefield{year}}{2016}
+            {\skipentry}
+            {}}
+        {\skipentry}}
 
 \setlength{\bibitemsep}{0.5em}
 \setlength{\bibhang}{5mm}
+
+% Reverse enumerated pub lists
+\usepackage{etaremune}
+\defbibenvironment{bibliography}
+  {\etaremune
+     {}
+     {\setlength{\leftmargin}{\bibhang}%
+      \setlength{\itemindent}{-\leftmargin}%
+      \setlength{\itemsep}{\bibitemsep}%
+      \setlength{\parsep}{\bibparsep}}}
+  {\endetaremune}
+  {\item}
 
 %% Format headers and footers %%%%%%%%%%%%%%%%%%%%
 \pagestyle{fancy}
