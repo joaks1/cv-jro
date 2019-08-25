@@ -38,7 +38,20 @@
 %% Bibliography Formating %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % \usepackage[round]{natbib}
 % \bibliographystyle{jro}
-\usepackage[bibstyle=bib/joaks-cv,backend=biber,bibencoding=utf8]{biblatex}
+\usepackage[bibstyle=bib/joaks-cv,
+        backend=biber,
+        bibencoding=utf8,
+        date=year]{biblatex}
+% Declare biblatex sorting template for CV
+\DeclareSortingTemplate[locale=auto]{cvsort}{%
+\sort[direction=descending]{\field{year}}%
+\sort[direction=ascending]{\field{sortname}\literal{zzzz}}%
+\sort[direction=descending]{\field{month}}%
+\sort[direction=ascending]{\field{author}}%
+\sort[direction=ascending]{\field{sorttitle}\literal{zzzz}}%
+\sort[direction=ascending]{\field{title}}%
+}
+\newrefcontext[sorting=cvsort]
 
 % No dot before number of articles
 % \usepackage{xpatch}
