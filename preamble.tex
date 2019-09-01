@@ -27,13 +27,30 @@
 \usepackage{parskip}
 \usepackage{tabulary}
 \usepackage[normalem]{ulem}
-\usepackage{hyperref}
-\hypersetup{pdfborder={0 0 0}, colorlinks=true, urlcolor=blue, linkcolor=black}
 \usepackage{titlesec}
 \usepackage{lastpage}
 \usepackage{fancyhdr}
 \usepackage{enumitem}
 \usepackage{ifthen}
+
+%% Set up color palettes %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Color palette GreenOrange_6 from
+% https://jiffyclub.github.io/palettable/tableau/
+\definecolor{pgreen}     {RGB}{50,162,81}
+\definecolor{porange}    {RGB}{255,127,15}
+\definecolor{pblue}      {RGB}{60,183,204}
+\definecolor{pyellow}    {RGB}{255,217,74}
+\definecolor{pteal}      {RGB}{57,115,124}
+\definecolor{pauburn}    {RGB}{184,90,13}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{hyperref}
+\hypersetup{pdfborder={0 0 0},
+            colorlinks=true,
+            % colorlinks=false,
+            urlcolor=pteal,
+            linkcolor=pteal,
+            citecolor=pteal}
 
 %% Bibliography Formating %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % \usepackage[round]{natbib}
@@ -100,6 +117,9 @@
                             {#1}}}}}}}}
 
 % Setup biblatex checks and filters
+\defbibfilter{cvsubmitted}{%
+    ( keyword=OaksCVPreprint or keyword=OaksSubmitted or keyword=OaksInReview ) and not keyword=OaksPeerReviewed
+}
 \defbibfilter{cvpreprints}{%
     keyword=OaksCVPreprint and not keyword=OaksPeerReviewed
 }
@@ -171,19 +191,22 @@
     {\large\sffamily\bfseries}
     {\S\ \thesection.}{.5em}{}[]
 \titlespacing{\section}
-    {0mm}{1.0ex plus .1ex minus .1ex}{-0.5ex}
+    {0mm}{1.0ex plus .15ex minus .15ex}{0ex}
+    % {0mm}{1.0ex plus .1ex minus .1ex}{-0.5ex}
 
 \titleformat{\subsection}[hang]
     {\large\sffamily\itshape}
     {\S\ \thesection.}{.5em}{}[]
 \titlespacing{\subsection}
-    {0mm}{1.0ex plus .1ex minus .1ex}{-0.5ex}
+    {0mm}{0.5ex plus .1ex minus .1ex}{0ex}
+    % {0mm}{1.0ex plus .1ex minus .1ex}{-0.5ex}
 
 \titleformat{\subsubsection}[runin]
     {\sffamily\bfseries}
     {\S\ \thesection.}{.5em}{}[.---]
 \titlespacing{\subsubsection}
-    {\parindent}{1.0ex plus .1ex minus .1ex}{0pt}
+    {\parindent}{0.5ex plus .1ex minus .1ex}{0ex}
+    % {\parindent}{1.0ex plus .1ex minus .1ex}{0pt}
 
 %% Format list environments %%%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}}
@@ -203,6 +226,22 @@
     \setlength{\parskip}{0pt}
     \setlength{\parsep}{0.5em}}
   {\end{itemize}}
+
+\newenvironment{tightItemize}{%
+\begin{itemize}[noitemsep, topsep=0pt, parsep=0pt, partopsep=0pt]}
+{\end{itemize}}
+
+\newenvironment{veryTightItemize}{%
+\begin{itemize}[noitemsep, topsep=0pt, parsep=0pt, partopsep=0pt, leftmargin=*]}
+{\end{itemize}}
+
+\newenvironment{tightEnumerate}{%
+\begin{enumerate}[noitemsep, topsep=0pt, parsep=0pt, partopsep=0pt]}
+{\end{enumerate}}
+
+\newenvironment{veryTightEnumerate}{%
+\begin{enumerate}[noitemsep, topsep=0pt, parsep=0pt, partopsep=0pt, leftmargin=*]}
+{\end{enumerate}}
 
 %% Basic formatting and spacing %%%%%%%%%%%%%%%%%%%%%
 \setlength{\parindent}{0em}

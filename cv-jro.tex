@@ -20,13 +20,14 @@
 \section*{Education}
 \input{education.tex}
 
-\section*{Research/Curatorial Appointments}
+\section*{Professional Appointments}
 \input{research.tex}
 
-\longcontent{
-\section*{Teaching Experience}
-\input{teaching.tex}
-}
+\section*{Grants}
+\input{grants.tex}
+
+\section*{Fellowships, Awards \& Honors}
+\input{awards.tex}
 
 % Publications
 \section*{Publications}
@@ -34,11 +35,13 @@
 \phdsymbol{}mentored graduate student;
 \postdocsymbol{}mentored postdoc.
 
-\subsection*{Preprints (in review)}
+% \subsection*{Preprints (in review)}
+\subsection*{Preprints/In Review}
 \nocite{*}
-\printbibliography[filter=cvpreprints, heading=none]
+% \printbibliography[filter=cvpreprints, heading=none]
+\printbibliography[filter=cvsubmitted, heading=none]
 
-\subsection*{Peer-reviewed publications}
+\subsection*{Peer-reviewed Publications}
 \nocite{*}
 \printbibliography[filter=cvpapersnopreprints, heading=none]
 
@@ -54,24 +57,38 @@ Presenter in italics;
 \phdsymbol{}mentored graduate student;
 \postdocsymbol{}mentored postdoc.
 
-\subsection*{Invited seminars}
+\subsection*{Invited Seminars}
 \nocite{*}
 \printbibliography[filter=invitedpresentation, heading=none]
 
-\subsection*{Conference presentations}
+\subsection*{Conference Presentations}
 \nocite{*}
 \printbibliography[filter=presentation, heading=none]
 }
 
-\section*{Grants}
-\input{grants.tex}
+\longcontent{
+\section*{Teaching Experience}
+\input{teaching.tex}
+}
 
-\section*{Fellowships, Awards \& Honors}
-\input{awards.tex}
+\longcontent{
+\section*{Advisee Honors and Awards}
+\input{au-dossier/advisees-grad-awards.tex}
+}
 
 \longcontent{
 \section*{Software}
 \input{software.tex}
+}
+
+\longcontent{
+\section*{Websites}
+\begin{tightItemize}
+    \item Phyletica Lab website: \url{http://phyletica.org}
+    \item Ecoevolity Documentation: \url{http://phyletica.org/ecoevolity}
+    \item PyMsBayes Documentation: \url{http://joaks1.github.io/PyMsBayes}
+    % \item SumTimes Documentation: \url{http://phyletica.github.io/SumTimes}
+\end{tightItemize}
 }
 
 \longcontent{
@@ -85,7 +102,11 @@ Presenter in italics;
 }
 
 \section*{Service}
-\input{service.tex}
+\subsection*{University Service}
+\input{service-university.tex}
+
+\subsection*{Professional Service}
+\input{service-professional.tex}
 
 \section*{Outreach}
 \input{outreach.tex}
