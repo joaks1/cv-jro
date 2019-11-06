@@ -16,11 +16,9 @@
 % \raggedright
 \singlespacing
 
-\tableofcontents
-
 \newpage
 
-\section{Standard Biographical Data}
+% \section{Standard Biographical Data}
 
 \bigskip
 \begin{mytitle}
@@ -42,11 +40,16 @@
 
 \newpage
 
-\section{Summary of activities at Auburn University}
+% \section{Summary of activities at Auburn University}
+\begin{mytitle}
+    One page summary of professional activities
+\end{mytitle}
+
 \input{summary.tex}
 
 \newpage
 
+% \tableofcontents
 
 \section{Allocation of time and effort}
 \begin{tabular}{ l l l }
@@ -131,9 +134,10 @@ None.
 % \paragraph{Book reviews and commentaries}
 
 % \paragraph{Popular articles}
-\paragraph{Preprints (in review)}
+\paragraph{Preprints/In review}
 \nocite{*}
-\printbibliography[filter=cvpreprints, heading=none]
+% \printbibliography[filter=cvpreprints, heading=none]
+\printbibliography[filter=cvsubmitted, heading=none]
 
 \paragraph{Peer-reviewed publications}
 
@@ -254,6 +258,13 @@ None.
 \subsubsection{Professional service}
 \input{../service-professional.tex}
 
+\newpage
+
+\section{Supplemental Documents}
+
+\includepdf[page={1}]{attachments/reviewer-letter-sse-evolution.pdf}
+
+\includepdf[page={1}]{attachments/ievobio-2019-wright.pdf}
 
 \end{document}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

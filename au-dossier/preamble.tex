@@ -34,6 +34,7 @@
 \usepackage{enumitem}
 \usepackage{ifthen}
 \usepackage{seqsplit}
+\usepackage{pdfpages}
 
 \setcounter{secnumdepth}{4}
 \setcounter{tocdepth}{4}
@@ -123,6 +124,9 @@
                             {#1}}}}}}}}
 
 % Setup biblatex checks and filters
+\defbibfilter{cvsubmitted}{%
+    ( keyword=OaksCVPreprint or keyword=OaksSubmitted or keyword=OaksInReview ) and not keyword=OaksPeerReviewed
+}
 \defbibfilter{cvpreprints}{%
     keyword=OaksCVPreprint and not keyword=OaksPeerReviewed
 }
