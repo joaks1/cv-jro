@@ -49,6 +49,7 @@
 \definecolor{pteal}      {RGB}{57,115,124}
 \definecolor{pauburn}    {RGB}{184,90,13}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{lightgray}{gray}{0.9}
 
 \usepackage{hyperref}
 \hypersetup{pdfborder={0 0 0},
@@ -185,23 +186,24 @@
 \renewcommand{\footrulewidth}{0pt}
 
 %% Format section titles %%%%%%%%%%%%%%%%%%%%%%%%%
-\titleformat{\section}[hang]
-    {\normalfont\Large\bfseries}
-    {\thesection}{1em}{}[]
+\renewcommand{\thesubsection}{\thesection.\Alph{subsection}}
+% \titleformat{\section}[hang]
+%     {\normalfont\Large\bfseries}
+%     {\thesection}{1em}{}[]
 \titlespacing*{\section}
     {0ex}{1.0ex plus .1ex minus .1ex}{0ex}
     % {0ex}{0ex}{0ex}
 
-\titleformat{\subsection}[hang]
-    {\normalfont\large\bfseries}
-    {\thesubsection}{1em}{}[]
+% \titleformat{\subsection}[hang]
+%     {\normalfont\large\bfseries}
+%     {\thesubsection}{1em}{}[]
 \titlespacing*{\subsection}
     {0ex}{1.0ex plus .1ex minus .1ex}{0ex}
     % {0ex}{0ex}{0ex}
 
-\titleformat{\subsubsection}[hang]
-    {\normalfont\normalsize\bfseries}
-    {\thesubsubsection}{1em}{}[]
+% \titleformat{\subsubsection}[hang]
+%     {\normalfont\normalsize\bfseries}
+%     {\thesubsubsection}{1em}{}[]
 \titlespacing*{\subsubsection}
     {0ex}{1.0ex plus .1ex minus .1ex}{0ex}
 
@@ -211,11 +213,11 @@
 \titlespacing{\paragraph}
     {0ex}{0.5ex plus .1ex minus .1ex}{0.5ex}
 
-\titleformat{\subparagraph}[runin]
+\titleformat{\subparagraph}[hang]
     {\normalsize\slshape\bfseries}
     {}{}{}[:]
 \titlespacing{\subparagraph}
-    {\parindent}{0ex}{0.5ex}
+    {0ex}{0.5ex plus .1ex minus .1ex}{0.5ex}
 
 \newenvironment{mytitle}
  {\parskip=0pt\par\nopagebreak\centering\large\slshape\bfseries}
