@@ -66,8 +66,8 @@
             citecolor=pteal}
 
 %% Bibliography Formating %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage[bibstyle=../bib/joaks-cv,
-% \usepackage[bibstyle=bib/joaks-au-cv,
+% \usepackage[bibstyle=../bib/joaks-cv,
+\usepackage[bibstyle=bib/joaks-au-cv,
         backend=biber,
         bibencoding=utf8,
         date=year]{biblatex}
@@ -154,6 +154,9 @@
 }
 \defbibfilter{beforeaupresentation}{%
     keyword=presentation and not keyword=au and not keyword=invited
+}
+\defbibfilter{openscinotebooks}{%
+    keyword=OaksOpenSciNotebook
 }
 \defbibcheck{afteraustart}{%
     \iffieldint{year}
