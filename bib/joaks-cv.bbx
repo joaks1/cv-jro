@@ -30,7 +30,8 @@
     \ifboolexpr{
         not test {\iffieldundef{doi}}
     }%
-    {\href{http://dx.doi.org/#1}{link.}}%
+    % {\href{http://dx.doi.org/#1}{link.}}%
+    {\href{http://dx.doi.org/#1}{DOI: \seqsplit{#1}.}}%
     {}%
 }
 \DeclareFieldFormat{url}{%
@@ -38,7 +39,8 @@
         test {\iffieldundef{doi}}
         and
         not test {\iffieldundef{url}}
-    }{\href{#1}{link.}}%
+    % }{\href{#1}{link.}}%
+    }{\href{#1}{URL: \seqsplit{#1}.}}%
     {}%
 }
 \DeclareFieldFormat{eprint}{}
