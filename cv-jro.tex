@@ -1,8 +1,8 @@
 \input{preamble.tex}
 \input{macros.tex}
 
-% \newcommand{\longcontent}[1]{}
-\newcommand{\longcontent}[1]{#1}
+\newcommand{\longcontent}[1]{}
+% \newcommand{\longcontent}[1]{#1}
 
 \newcommand{\oldcontent}[1]{}
 % \newcommand{\oldcontent}[1]{#1}
@@ -35,22 +35,21 @@
 \phdsymbol{}mentored graduate student;
 \postdocsymbol{}mentored postdoc.
 
-% \subsection*{Preprints (in review)}
-\subsection*{Preprints/In Review}
-\nocite{*}
-% \printbibliography[filter=cvpreprints, heading=none]
-\printbibliography[filter=cvsubmitted, heading=none]
+% Commenting out, because nothing listed right now
+% \subsection*{Preprints/In Review}
+% \nocite{*}
+% \printbibliography[filter=cvsubmitted, heading=none]
 
 \subsection*{Peer-reviewed Publications}
 \nocite{*}
 \printbibliography[filter=cvpapersnopreprints, heading=none]
 
-\longcontent{
+% \longcontent{
 \subsection*{Other Publications}
 \input{other-publications.tex}
-}
+% }
 
-\longcontent{
+% \longcontent{
 \section*{Presentations}
 Presenter in italics;
 \ugsymbol{}mentored undergraduate student;
@@ -64,22 +63,22 @@ Presenter in italics;
 \subsection*{Conference Presentations}
 \nocite{*}
 \printbibliography[filter=presentation, heading=none]
-}
+% }
 
-\longcontent{
+% \longcontent{
 \section*{Teaching Experience}
 \input{teaching.tex}
-}
+% }
 
-\longcontent{
+% \longcontent{
 \section*{Advisee Honors and Awards}
 \input{au-dossier/advisees-grad-awards.tex}
-}
+% }
 
-\longcontent{
+% \longcontent{
 \section*{Software}
 \input{software.tex}
-}
+% }
 
 \longcontent{
 \section*{Websites}
@@ -118,10 +117,10 @@ Presenter in italics;
 \section*{Outreach}
 \input{outreach.tex}
 
-\longcontent{
+% \longcontent{
 \section*{Additional Research Experience \& Skills}
 \input{skills.tex}
-}
+% }
 
 % \section*{References}
 % {\raggedright
