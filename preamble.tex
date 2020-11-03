@@ -130,6 +130,12 @@
 \defbibfilter{cvpapersnopreprints}{%
     keyword=OaksPeerReviewed and not keyword=OaksCVPreprint
 }
+\defbibfilter{highlightedpapersnopreprints}{%
+    keyword=OaksPeerReviewed and keyword=OaksHighlight and not keyword=OaksCVPreprint
+}
+\defbibfilter{cvpapersnohighlightsnopreprints}{%
+    keyword=OaksPeerReviewed and not keyword=OaksCVPreprint and not keyword=OaksHighlight
+}
 \defbibfilter{invitedpresentation}{%
     keyword=presentation and keyword=invited
 }
