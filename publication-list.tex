@@ -1,4 +1,5 @@
 \input{preamble.tex}
+\input{macros.tex}
 
 \newcommand{\docTitle}{Publication List\xspace}
 
@@ -9,10 +10,34 @@
 \singlespacing
 
 % Publications
-\nocite{*}
-\printbibliography
+% \nocite{*}
+% \printbibliography
 
-\section*{Other Publications}
+% \section*{Other Publications}
+% \input{other-publications.tex}
+
+% Publications
+% \section*{Publications}
+\ugsymbol{}mentored undergraduate student;
+\phdsymbol{}mentored graduate student;
+\postdocsymbol{}mentored postdoc.
+
+% Commenting out, because nothing listed right now
+% \subsection*{Preprints/In Review}
+% \nocite{*}
+% \printbibliography[filter=cvsubmitted, heading=none]
+
+% \subsection*{Peer-reviewed Publications}
+\subsection*{Highlighted Peer-reviewed Publications}
+\nocite{*}
+\printbibliography[filter=highlightedpapersnopreprints, heading=none]
+
+\subsection*{Other Peer-reviewed Publications}
+\nocite{*}
+\printbibliography[filter=cvpapersnohighlightsnopreprints, heading=none]
+
+% \longcontent{
+\subsection*{Non-peer-reviewed Publications}
 \input{other-publications.tex}
 
 \end{document}
