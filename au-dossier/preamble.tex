@@ -238,6 +238,13 @@
  {\parskip=0pt\par\nopagebreak\centering}
  {\par\noindent\ignorespacesafterend}
 
+%% Update citeyear to include hyperlink %%%%%%%%%%%
+\DeclareCiteCommand{\citeyear}
+    {}
+    {\bibhyperref{\printfield{year}}\bibhyperref{\printfield{extrayear}}}
+    {\multicitedelim}
+    {}
+
 %% Format list environments %%%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}}
 \renewcommand{\labelitemi}{$\circ$}
