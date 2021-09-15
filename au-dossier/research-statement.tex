@@ -1,13 +1,15 @@
 \textbf{\textit{What processes are responsible for the generation and
         distribution of biodiversity?}}
-Elucidating answers to this question, in its broadest sense, is the primary
+Elucidating answers to this question
+% , in its broadest sense,
+is the primary
 motivation of my research group.
 While research interests in my lab are diverse, our work is unified by
-(1) benefiting from, and contributing to, the rich information housed in
-biodiversity research collections
-and
-(2) using
-% using
+% (1) benefiting from, and contributing to, the rich information housed in
+% biodiversity research collections
+% and
+% (2) using
+using
 phylogenetics to infer and explicitly account for shared ancestry in our
 approaches to better understand processes of evolution and diversification.
 We use a broad suite of methods in this endeavor, including
@@ -15,16 +17,21 @@ field and lab work,
 developing statistical methods and associated software for inferring evolutionary history,
 and ultimately applying these computational tools to genomic data to test
 hypotheses about processes that generate biodiversity.
+% The questions my lab explores are integrative, open-ended, and require critical
+% thinking and creativity.
+% As a result,
+% I strive to include students and collaborators with diverse backgrounds and
+% perspectives to bring together unique insights.
 The questions my lab explores are integrative, open-ended, and require critical
-thinking and creativity.
-As a result,
+thinking and creativity,
+and
 I strive to include students and collaborators with diverse backgrounds and
 perspectives to bring together unique insights.
-Below, I highlight some of the research projects in my lab.
+Below, I highlight three projects in my lab.
 
-\paragraph*{Research Topic 1: Climate-driven diversification}
-
-\textit{\textbf{Prior to AU ---}}
+% \paragraph*{Research Topic 1: Climate-driven diversification}
+\textit{\textbf{Climate-driven diversification}}
+% \textit{\textbf{Prior to AU ---}}
 One question I am passionate about is whether Quaternary climatic oscillations
 promoted diversification by fragmenting the distributions of species.
 An ideal system for addressing this question is the dynamic landscape of
@@ -37,43 +44,44 @@ by rising sea levels were temporally clustered around interglacial sea
 incursions.
 % To test this prediction, I compared the divergence times of inter-island
 % populations across 22 tetrapod taxa.
-To test this prediction, we collected DNA sequences to infer and compare the
-divergence times among 22 pairs of populations on islands that were connected
-during glacial periods.
-Using an existing approximate-Bayesian computation (ABC) method, we found very
-strong support
-% (posterior probability of 0.982)
-for a single, recent, simultaneous divergence event shared by all 22 taxa.
-
-Suspicious of such strong support given the richness and stochasticity of the
-model underlying the ABC method, I used computer simulations to confirm that
-the method often supports highly clustered models of divergence even when taxa
-diverged randomly over millions of years
-(Oaks et al.\ \citeyear{Oaks2012}).
-I formulated the evolutionary model underlying the simulation-based ABC
-procedure and, using first principles of probability, identified theoretical
-reasons the method would tend to spuriously infer simultaneous
-divergences
-(Oaks et al.\ \citeyear{Oaks2012}).
-Guided by these insights, I developed a new model that avoids these theoretical
-pitfalls,
-implemented it in the software package
-\href{https://github.com/joaks1/dpp-msbayes}{dpp-msbayes},
-and developed a much more efficient 
-\href{https://joaks1.github.io/PyMsBayes/}{multi-processing interface}
-for this type of comparative phylogeographic inference.
-As predicted by theory, the new ABC method was more
-accurate
-(Oaks \citeyear{Oaks2014dpp}).
-However, the new approach also revealed that after reducing the sequence data
-into insufficient summary statistics, ABC approaches were left with little
-information to provide biological insights,
-which prevented us from evaluating the tenability of the climate-driven
-species-pump model of diversification.
+% To test this prediction, we collected DNA sequences to infer and compare the
+% divergence times among 22 pairs of populations on islands that were connected
+% during glacial periods.
+% Using an existing approximate-Bayesian computation (ABC) method, we found very
+% strong support
+% % (posterior probability of 0.982)
+% for a single, recent, simultaneous divergence event shared by all 22 taxa.
+%
+% Suspicious of such strong support given the richness and stochasticity of the
+% model underlying the ABC method, I used computer simulations to confirm that
+% the method often supports highly clustered models of divergence even when taxa
+% diverged randomly over millions of years
+% (Oaks et al.\ \citeyear{Oaks2012}).
+% I formulated the evolutionary model underlying the simulation-based ABC
+% procedure and, using first principles of probability, identified theoretical
+% reasons the method would tend to spuriously infer simultaneous
+% divergences
+% (Oaks et al.\ \citeyear{Oaks2012}).
+% Guided by these insights, I developed a new model that avoids these theoretical
+% pitfalls,
+% implemented it in the software package
+% \href{https://github.com/joaks1/dpp-msbayes}{dpp-msbayes},
+% and developed a much more efficient 
+% \href{https://joaks1.github.io/PyMsBayes/}{multi-processing interface}
+% for this type of comparative phylogeographic inference.
+% As predicted by theory, the new ABC method was more
+% accurate
+% (Oaks \citeyear{Oaks2014dpp}).
+% However, the new approach also revealed that after reducing the sequence data
+% into insufficient summary statistics, ABC approaches were left with little
+% information to provide biological insights,
+% which prevented us from evaluating the tenability of the climate-driven
+% species-pump model of diversification.
 % project repo: https://github.com/joaks1/msbayes-experiments
-
-\textit{\textbf{Work at AU ---}}
-Motivated by our unsatisfied curiosity, my lab group
+%
+% \textit{\textbf{Work at AU ---}}
+% Motivated by our unsatisfied curiosity, my lab group
+To test this prediction, my lab group
 (1) developed a full-likelihood Bayesian method in the software package
 \href{http://phyletica.org/ecoevolity/}{ecoevolity}
 that can leverage all of the information from genomic data to infer
@@ -88,43 +96,44 @@ model
 (Oaks et al.\ \citeyear{Oaks2018paic});
 a result that makes sense in light of the life history and habitat
 preferences of these lizards.
-
+%
 We also extended
 \href{http://phyletica.org/ecoevolity/}{ecoevolity}
-to infer shared changes in demography across populations.
-Using this extension, we inferred the demographic
-histories of five Alaskan populations of three-spine stickleback
-fish using genomic data.
-We found strong evidence that all five populations recently expanded at
-different times
-(Oaks et al.\ \citeyear{Oaks2019codemog}).
-Our results were in stark contrast to previous estimates using
-approximate-Bayesian approaches that supported a simultaneous expansion event
-across all five populations.
-Based on our simulations, these previous findings of simultaneous expansion
-were likely spurious and driven by model assumptions and character-acquisition
-biases
+to infer shared changes in demography across populations
+% Using this extension, we inferred the demographic
+% histories of five Alaskan populations of three-spine stickleback
+% fish using genomic data.
+% We found strong evidence that all five populations recently expanded at
+% different times
+% (Oaks et al.\ \citeyear{Oaks2019codemog}).
+% Our results were in stark contrast to previous estimates using
+% approximate-Bayesian approaches that supported a simultaneous expansion event
+% across all five populations.
+% Based on our simulations, these previous findings of simultaneous expansion
+% were likely spurious and driven by model assumptions and character-acquisition
+% biases
 (Oaks et al.\ \citeyear{Oaks2019codemog}).
 
 % project repo: https://github.com/phyletica/gekgo
 
-The entire arc of this line of inquiry was funded by the National Science
-Foundation (NSF)
-(DEB
-\href{https://www.nsf.gov/awardsearch/showAward?AWD_ID=1011423}{1011423},
-\href{https://www.nsf.gov/awardsearch/showAward?AWD_ID=1308885}{1308885},
-and
-\href{https://www.nsf.gov/awardsearch/showAward?AWD_ID=1656004}{1656004})
-and is a good example of my lab's willingness to derive and implement new
-models and computational approaches to interrogate questions that motivate us.
-I also documented our progress in all aspects of this work in open-science
-project repositories that can be found at
-\href{https://github.com/joaks1/msbayes-experiments}{github.com/joaks1/msbayes-experiments},
-\href{https://github.com/phyletica/ecoevolity-experiments}{github.com/phyletica/ecoevolity-experiments},
-and
-\href{https://github.com/phyletica/gekgo}{github.com/phyletica/gekgo}.
+% The entire arc of this line of inquiry was funded by the National Science
+% Foundation (NSF)
+% (DEB
+% \href{https://www.nsf.gov/awardsearch/showAward?AWD_ID=1011423}{1011423},
+% \href{https://www.nsf.gov/awardsearch/showAward?AWD_ID=1308885}{1308885},
+% and
+% \href{https://www.nsf.gov/awardsearch/showAward?AWD_ID=1656004}{1656004})
+% and is a good example of my lab's willingness to derive and implement new
+% models and computational approaches to interrogate questions that motivate us.
+% I also documented our progress in all aspects of this work in open-science
+% project repositories that can be found at
+% \href{https://github.com/joaks1/msbayes-experiments}{github.com/joaks1/msbayes-experiments},
+% \href{https://github.com/phyletica/ecoevolity-experiments}{github.com/phyletica/ecoevolity-experiments},
+% and
+% \href{https://github.com/phyletica/gekgo}{github.com/phyletica/gekgo}.
 
-\paragraph*{Research Topic 2: Generalizing Bayesian phylogenetics}
+% \paragraph*{Research Topic 2: Generalizing Bayesian phylogenetics}
+\textit{\textbf{Generalizing Bayesian phylogenetics ---}}
 In phylogenetics, we have long made a limiting assumption about the processes
 that cause evolutionary lineages (whether they are genes or populations) to
 diversify: \textit{we assume these processes affect only one lineage and cause
@@ -152,27 +161,28 @@ We have implemented this approach in
 \href{http://phyletica.org/ecoevolity/}{ecoevolity}
 and validated its performance using simulations
 (Oaks and Wood, Jr.\ \citeyear{Oaks2021phycoeval}).
-
-One motivation for developing this new statistical phylogenetic framework, is
-our desire to test several long-standing biogeographical hypotheses to explain
-the distribution of the rich biodiversity across Southeast Asia.
-We are currently collecting genomic data from three genera of geckos that are
-co-distributed across much of this region.
-Our recent fieldwork in Indochina has added to our geographic sampling of these
-three genera, and will allow us to use our new methods to test for patterns
-predicted by processes of diversification across both mainland and insular
-Southeaset Asia.
-% To use this method to test several long-standing biogeographical
-% hypotheses across Southeast Asia,
-% we are currently collecting genomic data from several genera of geckos that are
+%
+% One motivation for developing this new statistical phylogenetic framework, is
+% our desire to test several long-standing biogeographical hypotheses to explain
+% the distribution of the rich biodiversity across Southeast Asia.
+% We are currently collecting genomic data from three genera of geckos that are
 % co-distributed across much of this region.
+% Our recent fieldwork in Indochina has added to our geographic sampling of these
+% three genera, and will allow us to use our new methods to test for patterns
+% predicted by processes of diversification across both mainland and insular
+% Southeaset Asia.
+% % To use this method to test several long-standing biogeographical
+% % hypotheses across Southeast Asia,
+% % we are currently collecting genomic data from several genera of geckos that are
+% % co-distributed across much of this region.
 To make our approach more generally applicable to questions about biogeography,
 genome evolution, epidemiology, and coevolution,
 we are also porting our distributions and algorithms to the flexible
 statistical phylogenetic software package
 \href{https://revbayes.github.io/}{RevBayes}.
 
-\paragraph*{Research Topic 3: Generalizing the birth-death process}
+% \paragraph*{Research Topic 3: Generalizing the birth-death process}
+\textit{\textbf{Generalizing the birth-death process ---}}
 We have developed the theory and computational machinery to explore
 the full space of phylogenetic trees, but due to the lack
 of biologically inspired mechanistic models whose distribution covers
@@ -184,47 +194,47 @@ Not only will this process provide a biologically inspired model, but will also
 allow us to learn about macroevolutionary parameters (e.g., rates of
 speciation) from genetic data.
 
-\paragraph*{Research Topic 4: Improving phylogenetics with genomic data}
-By analytically integrating over the evolutionary history of individual loci,
-my lab's software
-\href{http://phyletica.org/ecoevolity/}{ecoevolity}
-can infer phylogenies from millions of sites from across the genomes sampled
-from natural populations.
-However, as the number of taxa (and thus the size of the phylogeny) increases,
-the method becomes computationally expensive.
-There are a number of ways that we plan to extend this method to accommodate
-larger phylogenies, including
-(1) analytically integrating the population sizes along the tree to
-avoid having to sample them with computationally expensive algorithms,
-(2) analytically integrating variation in the rate of substitution
-across the tree to relax the assumption of a strict ``molecular clock'' while
-minimizing computational burden,
-and
-(3) limiting the size of the state space that needs to be considered when
-calculating the likelihood toward the root of the tree.
-These advances are imperative for inferring large phylogenies from genomic data
-while explicitly accounting for the variation in evolutionary history across
-chromosomes.
+% \paragraph*{Research Topic 4: Improving phylogenetics with genomic data}
+% By analytically integrating over the evolutionary history of individual loci,
+% my lab's software
+% \href{http://phyletica.org/ecoevolity/}{ecoevolity}
+% can infer phylogenies from millions of sites from across the genomes sampled
+% from natural populations.
+% However, as the number of taxa (and thus the size of the phylogeny) increases,
+% the method becomes computationally expensive.
+% There are a number of ways that we plan to extend this method to accommodate
+% larger phylogenies, including
+% (1) analytically integrating the population sizes along the tree to
+% avoid having to sample them with computationally expensive algorithms,
+% (2) analytically integrating variation in the rate of substitution
+% across the tree to relax the assumption of a strict ``molecular clock'' while
+% minimizing computational burden,
+% and
+% (3) limiting the size of the state space that needs to be considered when
+% calculating the likelihood toward the root of the tree.
+% These advances are imperative for inferring large phylogenies from genomic data
+% while explicitly accounting for the variation in evolutionary history across
+% chromosomes.
 
-\paragraph*{Research Topic 5: An evolutionary approach to emerging infectious diseases}
-Globally, the association between habitat fragmentation and the emergence of
-zoonotic infectious diseases in human populations has motivated research into
-the ecological processes responsible for this pattern.
-Sarah Zohdy, Tonia Schwartz, and I have proposed an evolutionary mechanism for
-this pattern that can complement ecological
-perspectives
-(Zohdy et al.\ \citeyear{Zohdy2019}).
-As gene flow decreases between habitat fragments, the populations inhabiting
-them will begin to diverge due to mutations and genetic drift.
-In addition, the lack of gene flow allows mammalian hosts, obligate
-ectoparasites, and pathogens within each fragment to coevolve largely
-independently.
-The neutral divergence among fragments, combined with the decoupling of
-coevolutionary selective pressures, can cause the overall genetic
-diversity of pathogens across the landscape to rapidly increase,
-which raises the chances of pathogen variants with zoonotic potential.
-We are working on testing this model using mouse lemurs, lice, and viruses in
-Madagascar.
+% \paragraph*{Research Topic 5: An evolutionary approach to emerging infectious diseases}
+% Globally, the association between habitat fragmentation and the emergence of
+% zoonotic infectious diseases in human populations has motivated research into
+% the ecological processes responsible for this pattern.
+% Sarah Zohdy, Tonia Schwartz, and I have proposed an evolutionary mechanism for
+% this pattern that can complement ecological
+% perspectives
+% (Zohdy et al.\ \citeyear{Zohdy2019}).
+% As gene flow decreases between habitat fragments, the populations inhabiting
+% them will begin to diverge due to mutations and genetic drift.
+% In addition, the lack of gene flow allows mammalian hosts, obligate
+% ectoparasites, and pathogens within each fragment to coevolve largely
+% independently.
+% The neutral divergence among fragments, combined with the decoupling of
+% coevolutionary selective pressures, can cause the overall genetic
+% diversity of pathogens across the landscape to rapidly increase,
+% which raises the chances of pathogen variants with zoonotic potential.
+% We are working on testing this model using mouse lemurs, lice, and viruses in
+% Madagascar.
 
 % \subsubsection*{Bringing phylogenetics into the inference of population structure}
 % Gideon Bradburd and colleagues recently introduced a method that uses genomic
