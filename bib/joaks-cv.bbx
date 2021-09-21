@@ -31,7 +31,7 @@
         not test {\iffieldundef{doi}}
     }%
     % {\href{http://dx.doi.org/#1}{link.}}%
-    {\href{http://dx.doi.org/#1}{DOI: \seqsplit{#1}.}}%
+    {DOI: \href{http://dx.doi.org/#1}{\seqsplit{#1}.}}%
     {}%
 }
 \DeclareFieldFormat{url}{%
@@ -40,13 +40,15 @@
         and
         not test {\iffieldundef{url}}
     % }{\href{#1}{link.}}%
-    }{\href{#1}{URL: \seqsplit{#1}.}}%
+    }{URL: \href{#1}{\seqsplit{#1}.}}%
     {}%
 }
 \DeclareFieldFormat{eprint}{}
 
 \DeclareDatamodelFields[type=field, datatype=literal, skipout=false]{cvnote1}
 \DeclareFieldFormat{cvnote1}{\addspace*#1.}
+\DeclareDatamodelFields[type=field, datatype=literal, skipout=false]{video}
+\DeclareFieldFormat{video}{\addspace Video: \href{#1}{\seqsplit{#1}}.}
 
 % Change bibliography section title
 \DefineBibliographyStrings{english}{%
@@ -66,6 +68,13 @@
   \setunit{\addspace}%
   \setunit{\addcolon\space}%
   \newunit}
+
+\newbibmacro*{videolink}{%
+  \iffieldundef{video}
+    {}
+    {\printfield{video}}%
+    \newunit}
+
 
 \DeclareBibliographyDriver{article}{%
   \ifboolexpr{
@@ -149,6 +158,8 @@
   \iftoggle{bbx:isbn}
     {\printfield{isbn}}
     {}%
+  \newunit\newblock
+  \usebibmacro{videolink}%
   \newunit\newblock
   \usebibmacro{doi+eprint+url}%
   \newunit\newblock
