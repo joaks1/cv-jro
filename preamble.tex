@@ -34,6 +34,9 @@
 \usepackage{ifthen}
 \usepackage{seqsplit}
 
+% Uncomment to show margins
+% \usepackage{showframe}
+
 %% Set up color palettes %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Color palette GreenOrange_6 from
 % https://jiffyclub.github.io/palettable/tableau/
@@ -130,11 +133,17 @@
 \defbibfilter{cvpapersnopreprints}{%
     keyword=OaksPeerReviewed and not keyword=OaksCVPreprint
 }
+\defbibfilter{resumepapers}{%
+    keyword=OaksResume
+}
 \defbibfilter{highlightedpapersnopreprints}{%
     keyword=OaksPeerReviewed and keyword=OaksHighlight and not keyword=OaksCVPreprint
 }
 \defbibfilter{cvpapersnohighlightsnopreprints}{%
     keyword=OaksPeerReviewed and not keyword=OaksCVPreprint and not keyword=OaksHighlight
+}
+\defbibfilter{highlightedpresentations}{%
+    keyword=highlight
 }
 \defbibfilter{invitedpresentation}{%
     keyword=presentation and keyword=invited
@@ -184,6 +193,48 @@
       \setlength{\parsep}{\bibparsep}}}
   {\endetaremune}
   {\clearfield{extradate}\item}
+
+%% Lists in table cells %%%%%%%%%%%%%%%%%%%%
+% Create column type to allow enum envs in tables
+\usepackage{calc}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1\textwidth-\tabcolsep}}
+% \newcolumntype{E}[1]{>{\raggedleft\arraybackslash}p{#1\textwidth-\tabcolsep}}
+\newcolumntype{E}[1]{>{\raggedright\arraybackslash}p{#1\textwidth-\tabcolsep}}
+
+% Use enumitem to create itemize env for table cells
+\newlist{cellitemize}{itemize}{1}
+% \setlist[cellitemize]{label=\textbullet,nosep,after=\strut,align=parleft,leftmargin=*,after=\vspace{-\baselineskip},before=\vspace{-0.5\baselineskip}}
+\setlist[cellitemize]{label=\textbullet,nosep,after=\strut,align=parleft,leftmargin=*,after=\vspace{-\baselineskip},before=\vspace{-0.75\baselineskip}}
+
+\newlist{cvitemize}{itemize}{1}
+\setlist[cvitemize]{label=\textbullet,nosep,after=\strut,align=parleft,leftmargin=*,after=\vspace{-\baselineskip}}%,before=\vspace{-0.5\baselineskip}}
+
+\usepackage{pgf}
+\newcommand{\longcvitem}[4][0.16]{
+    \pgfmathsetmacro\result{1.0-#1}
+    \begin{tabular}{ @{}P{\result} E{#1}@{} }
+         #3 & #2 \\
+         \multicolumn{2}{P{1.0}}{#4}
+    \end{tabular}}
+
+\newcommand{\bflongcvitem}[4][0.16]{
+    \pgfmathsetmacro\result{1.0-#1}
+    \begin{tabular}{ @{}P{\result} E{#1}@{} }
+        \textbf{#3} & \textbf{#2} \\
+         \multicolumn{2}{P{1.0}}{#4}
+    \end{tabular}}
+
+\newcommand{\revcvitem}[3][0.16]{
+    \pgfmathsetmacro\result{1.0-#1}
+    \begin{tabular}{ @{}P{\result} E{#1}@{} }
+        #3 & #2 \\
+    \end{tabular}}
+
+\newcommand{\bfrevcvitem}[3][0.16]{
+    \pgfmathsetmacro\result{1.0-#1}
+    \begin{tabular}{ @{}P{\result} E{#1}@{} }
+        {\bf #3} & \textbf{#2} \\
+    \end{tabular}}
 
 %% Format headers and footers %%%%%%%%%%%%%%%%%%%%
 \pagestyle{fancy}

@@ -1,0 +1,308 @@
+\input{preamble.tex}
+\input{macros.tex}
+
+\newcommand{\longcontent}[1]{}
+% \newcommand{\longcontent}[1]{#1}
+
+\newcommand{\oldcontent}[1]{}
+% \newcommand{\oldcontent}[1]{#1}
+
+\newcommand{\docTitle}{Curriculum Vitae\xspace}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\singlespacing
+
+\noindent\begin{tabular*}{\textwidth}[tb]{ @{}l @{\extracolsep{\fill}} l@{}}
+Assistant Professor \& Curator
+& Phone: +1-802-280-5843 \\
+Department of Biological Sciences
+& E-mail: \href{mailto:joaks@auburn.edu}{joaks@auburn.edu} \\
+Museum of Natural History
+& Web: \href{http://phyletica.org}{phyletica.org} \\
+Auburn University
+% & ORCiD: \href{https://orcid.org/0000-0002-3757-3836}{0000-0002-3757-3836} \\
+% 101 Rouse Life Sciences Building
+& GitHub: \href{https://github.com/joaks1}{joaks1}, \href{https://github.com/phyletica}{phyletica}\\
+Auburn, Alabama 36849, USA
+& \href{https://scholar.google.com/citations?user=lz3wj6AAAAAJ&hl=en}{Google Scholar} \\
+\end{tabular*}
+
+\section*{Professional Appointments}
+
+\bflongcvitem{2016--present}{%
+    Assistant Professor \& Curator, Biological Sciences, Auburn University}{%
+\begin{cellitemize}
+    \item Principal Investigator of a computational evolutionary biology
+        research team (11 graduate and 15 undergraduate students, and 3
+        postdoctoral researchers) that collects genomic data and develops
+        computational tools to test hypotheses about biological
+        diversification
+    \item Collaboratively use version-control tools for software
+        development and project managment
+\end{cellitemize}}
+
+\bflongcvitem{2013--2016}{%
+NSF Postdoctoral Research Fellow, University of Washington}{%
+\begin{cellitemize}
+    \item Developed statistical methods of comparative phylogeographical
+        model choice
+\end{cellitemize}}
+
+\section*{Education}
+\revcvitem{2013}{
+    Ph.D. in Ecology \& Evolutionary Biology, University of Kansas
+} \\
+\revcvitem{2007}{
+    M.S. in Biological Sciences, Louisiana State University
+} \\
+\revcvitem{2004}{
+    B.S. in Biology, University of Wisconsin Oshkosh (\emph{Summa Cum Laude})
+}
+
+% \section*{Professional Appointments}
+% \input{appointments-sans-curation.tex}
+
+% \section*{Curatorial Experience}
+% \input{curatorial-experience.tex}
+
+\section*{Select Grants Awarded (\$1.16 million total)}
+% \input{grants.tex}
+\myHangIndent
+\textbf{Oaks, J.R.\ (PI)}.
+Senior personnel: L.L.\ Grismer, C.D.\ Siler, and P.L.\ Wood, Jr.
+Generalizing Bayesian Phylogenetics to Infer Shared Evolutionary Events.
+National Science Foundation Division of Environmental Biology Award
+\href{https://www.nsf.gov/awardsearch/showAward?AWD_ID=1656004&HistoricalAwards=false}{1656004}.
+5/2017--5/2021.
+\$551,169.
+Funded.
+
+\section*{Select Grants Pending}
+% \input{grants-pending.tex}
+\myHangIndent
+\textbf{Oaks, J.R.\ (PI)}.
+CAREER: A process-based, modular, phylogenetic framework for inferring rates
+and patterns of shared evolutionary events.
+National Science Foundation Division of Environmental Biology
+6/2022--6/2027.
+\$1,287,213.
+Pending.
+
+\section*{Fellowships}
+\input{awards.tex}
+
+% Publications
+\section*{Select Publications (\href{https://scholar.google.com/citations?user=lz3wj6AAAAAJ&hl=en}{38 total; 1336 citations})}
+\ugsymbol{}mentored undergraduate student;
+\phdsymbol{}mentored graduate student;
+\postdocsymbol{}mentored postdoc.
+
+\nocite{*}
+\printbibliography[filter=resumepapers, heading=none]
+
+\section*{Select Presentations (15 invited seminars and 41 conference presentations)}
+Presenter in italics;
+\ugsymbol{}mentored undergraduate student;
+\phdsymbol{}mentored graduate student;
+\postdocsymbol{}mentored postdoc.
+
+\nocite{*}
+\printbibliography[filter=highlightedpresentations, heading=none]
+
+% \longcontent{
+\section*{Teaching Experience}
+% \input{teaching.tex}
+% \begin{cvitemize}
+%     \item Since 2014, I have taught a number of undergraduate and graduate
+%         courses, including
+%         Scripting for Biologists,
+%         Advanced Statistical Methods for Evolutionary Genetics,
+%         Evolution,
+%         and
+%         Introductory Biology
+%         % Herpetology,
+%     \item Taught workshop modules on basic scripting and using version control
+%         to improve reproducibility in science
+% \end{cvitemize}
+\longcvitem{2016--present}{%
+    Auburn University}{%
+\begin{cellitemize}
+    \item Taught a number of undergraduate and graduate courses, including
+        \href{http://phyletica.org/teaching/s4b}{Scripting for Biologists},
+        Advanced Statistical Methods for Evolutionary
+        Genetics, and Evolution
+\end{cellitemize}}
+\longcvitem{2012--present}{%
+    Workshop Instructor}{%
+\begin{cellitemize}
+    \item Instructor for workshops (e.g., Software Carpentry and Auburn
+        Bioinformatics Bootcamp); topics include basic scripting and using
+        version control to improve reproducibility in science
+\end{cellitemize}}
+\longcvitem{2014--2016}{%
+    Lecturer, Introductory Biology (BIOL 180),
+    University of Washington}{%
+\begin{cellitemize}
+        \item Developed and implemented active-learning exercises, assessed
+            student learning, and lectured in collaboration with the
+            Biology Education Research Group (BERG)
+\end{cellitemize}}
+% }
+
+% % \longcontent{
+% \section*{Advisee Honors and Awards}
+% \input{au-dossier/advisees-grad-awards.tex}
+% % }
+
+% \longcontent{
+\section*{Select Software Packages}
+% \input{software.tex}
+\noindent
+\href{https://github.com/phyletica/ecoevolity}{Ecoevolity}:
+    Estimating evolutionary coevality. \\
+\noindent
+\href{https://github.com/phyletica/sumcoevolity}{Pycoevolity}:
+    A python package for summarizing the output of Ecoevolity. \\
+\noindent
+\href{https://github.com/joaks1/fragcoalsim}{Fragcoalsim}:
+    A package for coalescent simulations and expectations under population
+    fragmentation. \\
+\noindent
+\href{http://phylo.bio.ku.edu/software/sate/sate.html}{{SAT}\'{e}}:
+    Phylogenetic software for simultaneous alignment and tree estimation.
+% }
+
+% % \longcontent{
+% \section*{Websites}
+% \begin{tightItemize}
+%     \item Phyletica Lab website: \url{http://phyletica.org}
+%     \item Phyletica Lab YouTube Channel: \url{https://www.youtube.com/channel/UCPPWy11zYqq-9lE_CQ0qPrw}
+%     \item Ecoevolity Documentation: \url{http://phyletica.org/ecoevolity}
+%     \item PyMsBayes Documentation: \url{http://joaks1.github.io/PyMsBayes}
+%     % \item SumTimes Documentation: \url{http://phyletica.github.io/SumTimes}
+% \end{tightItemize}
+% % }
+
+% \section*{Open-Science Notebooks}
+% \ugsymbol{}mentored undergraduate student;
+% \phdsymbol{}mentored graduate student;
+% \postdocsymbol{}mentored postdoc.
+% \nocite{*}
+% \printbibliography[filter=openscinotebooks, heading=none]
+
+% \longcontent{
+% \section*{Professional Affiliations}
+% \input{affiliations.tex}
+% }
+
+% \oldcontent{
+% \section*{Workshops Attended}
+% \input{workshops-attended.tex}
+% }
+
+% \section*{Service}
+% \subsection*{University Service}
+% \input{service-university.tex}
+
+% \subsection*{Professional Service}
+% \input{service-professional.tex}
+
+% \section*{Outreach}
+% \input{outreach.tex}
+
+% \longcontent{
+\section*{Additional Research Experience \& Skills}
+% \input{skills.tex}
+\myHangIndent
+{\sffamily\itshape Computer programming languages:} C/C++, Python, Julia, R, Java,
+PERL, shell scripting, and \LaTeX
+% }
+
+\section*{Select Service \& Outreach Activities}
+
+\bfrevcvitem{2021--present}{
+Associate editor for \href{https://academic.oup.com/sysbio}{\emph{Systematic Biology}}
+} \\
+\bfrevcvitem{2021}{
+Conduct moderator and Evo Ally for the 2021 Evolution Meeting
+} \\
+\bflongcvitem{2017--present}{Prison education---Alabama Prison Arts + Education Project (APAEP)}{
+    \begin{cellitemize}
+        \item Taught 14-week evolutionary biology courses to diverse classes of
+            students incarcerated in Alabama Correctional Facilities
+        \item Created a biology-themed issue of \emph{The Warbler} newsletter,
+            which is distributed by the APAEP to over 800 current and former
+            students, and by other prison-education organizations across 28
+            states and 3 countries
+    \end{cellitemize}
+}
+\bflongcvitem{2020--2021}{Diversity, Equity, and Inclusion Training}{
+    \begin{cellitemize}
+        \item Completed Safe-Zone Training, offered by Auburn University's
+            Human Resources Development
+        \item Attended Workshop on Gender Identity and Pronouns, offered by
+            Auburn University's Office of Inclusion and Diversity
+    \end{cellitemize}
+}
+\bflongcvitem{2019}{\href{https://www.auburn.edu/cosam/departments/diversity/summerbridge/index.htm}{STEM Summer Bridge Program}}{
+    \begin{cellitemize}
+        \item Lecturer for the program to help prepare students from
+            historically excluded groups for academia
+    \end{cellitemize}
+}
+\bflongcvitem{2018 \& 2019}{Alabama State Science Olympiad}{
+    \begin{cellitemize}
+        \item Developed and administered practical exam in biology for the
+            middle and high school competitions
+    \end{cellitemize}
+}
+\bflongcvitem{2016--2018}{Committee member of the Informatics Steering Group (Auburn University)}{
+    \begin{cellitemize}
+        \item Developed a curriculum for
+            graduate students to earn a
+            \href{http://bulletin.auburn.edu/thegraduateschool/graduatedegreesoffered/biologicalsciencesmsphd_major/computationalbiology_gradcert/}{Graduate
+                Certificate in Computational Biology}.
+    \end{cellitemize}
+}
+\bflongcvitem{2016}{Project Lead the Way (PLTW) Alabama State Conference}{
+    \begin{cellitemize}
+        \item Gave a presentation about bioinformatics to K-12 educators from
+            across Alabama
+    \end{cellitemize}
+}
+% \myHangIndent
+% Ad hoc reviewer for
+\bflongcvitem{}{Peer review}{
+    \begin{cellitemize}
+        \item Reviewer of grant proposals for the
+National Science Foundation Dimensions of Biodiversity Program
+and
+National Security Agency Mathematical Sciences Grant Program
+% Society of Systematic Biologists Graduate Student Research Awards
+        \item Reviewer of manuscripts for
+\emph{BMC Evolutionary Biology}, % (3),
+\emph{Evolution}, % (5),
+\emph{Molecular Biology and Evolution}, % (1),
+\emph{Molecular Ecology}, % (3),
+\emph{Molecular Phylogenetics and Evolution}, % (1),
+\emph{Organisms Diversity and Evolution}, % (2),
+\emph{Proceedings of the Royal Society B}, % (2),
+\emph{Systematic Biology}, % (13),
+and
+\emph{Theoretical Population Biology}% (1)
+    \end{cellitemize}
+}
+
+
+% \section*{References}
+% {\raggedright
+% \input{ref-list.tex}
+% }
+
+% \input{international-collabs.tex}
+
+\end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
