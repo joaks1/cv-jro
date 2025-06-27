@@ -1,0 +1,47 @@
+\input{../preamble.tex}
+\input{../macros.tex}
+
+\newcommand{\longcontent}[1]{}
+% \newcommand{\longcontent}[1]{#1}
+
+\newcommand{\oldcontent}[1]{}
+% \newcommand{\oldcontent}[1]{#1}
+
+\newcommand{\docTitle}{Abbreviated Curriculum Vitae\xspace}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+% \raggedright
+\singlespacing
+
+\input{../contact-info.tex}
+
+\section*{Education}
+\input{../education.tex}
+
+\section*{Professional Appointments}
+\input{../research.tex}
+
+\section*{5 Most Recent Publications (\href{https://scholar.google.com/citations?user=lz3wj6AAAAAJ&hl=en}{44 total; 2171 citations})}
+\ugsymbol{}mentored undergraduate student;
+\phdsymbol{}mentored graduate student;
+\postdocsymbol{}mentored postdoc.
+
+\nocite{*}
+\printbibliography[filter=recent5papers, heading=none]
+
+\section*{Grant Submissions During Last 5 Years}
+\ugsymbol{}mentored undergraduate student;
+\phdsymbol{}mentored graduate student;
+\postdocsymbol{}mentored postdoc.
+
+\subsection*{Funded}
+\input{grants-table-at-au-funded-5-years.tex}
+
+\subsection*{Not funded}
+\input{grants-table-at-au-not-funded-5-years.tex}
+
+\end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
