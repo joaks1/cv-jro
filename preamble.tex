@@ -123,6 +123,9 @@
                             {#1}}}}}}}}
 
 % Setup biblatex checks and filters
+\defbibfilter{recent5papers}{%
+    keyword=Oaks5Recent
+}
 \defbibfilter{cvsubmitted}{%
     ( keyword=OaksCVPreprint or keyword=OaksSubmitted or keyword=OaksInReview ) and not keyword=OaksPeerReviewed
 }
